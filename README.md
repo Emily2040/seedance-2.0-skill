@@ -5,7 +5,7 @@
 </picture>
 
 <p align="center">
-  <a href="https://github.com/Emily2040/seedance-2.0/releases"><img src="https://img.shields.io/badge/version-5.0.0-00f0ff?style=flat-square&labelColor=0d1117" alt="Version"></a>
+  <a href="https://github.com/Emily2040/seedance-2.0/releases"><img src="https://img.shields.io/badge/version-5.1.0-00f0ff?style=flat-square&labelColor=0d1117" alt="Version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-b000ff?style=flat-square&labelColor=0d1117" alt="License"></a>
   <a href="skills"><img src="https://img.shields.io/badge/skills-23_modules-ff006e?style=flat-square&labelColor=0d1117" alt="Skills"></a>
   <a href="#-multilingual-precision"><img src="https://img.shields.io/badge/languages-5-ffbe0b?style=flat-square&labelColor=0d1117" alt="Languages"></a>
@@ -23,12 +23,12 @@
   <a href="https://x.com/iamemily2050">𝕏</a> &nbsp;|&nbsp;
   <a href="https://instagram.com/iamemily2050">IG</a><br>
   <b>Platform:</b> <a href="https://seed.bytedance.com/en/seedance2_0">ByteDance Seedance 2.0</a> · <a href="https://dreamina.capcut.com/tools/seedance-2-0">Dreamina</a> · <a href="https://jimeng.jianying.com/">Jimeng</a><br>
-  <b>Updated:</b> 2026-03-03 · Q1 2026 release intelligence
+  <b>Updated:</b> 2026-04-27 · v5.1.0 validation and source-hygiene release
 </p>
 
 ---
 
-## `>` The v5.0 Philosophy: Intent Over Precision
+## `>` The v5.1 Philosophy: Intent Over Precision
 
 This library teaches you to **direct** the AI, not micro-manage it. Tell the model WHAT you want and HOW it should FEEL. Use `@references` to show, not tell.
 
@@ -37,7 +37,7 @@ This library teaches you to **direct** the AI, not micro-manage it. Tell the mod
 | **Full Interview** | Vague idea, need creative guidance | [seedance-interview](skills/seedance-interview/SKILL.md) |
 | **Direct Prompt** | Clear vision, have reference media | [seedance-prompt](skills/seedance-prompt/SKILL.md) |
 
-> **Note from the field (Feb 2026):** Seedance V2 performs significantly better with short prompts (30-100 words) written in Chinese. The v5.0 prompt system enforces this by default.
+> **Note from the field (verified 2026-04-27):** Seedance V2 performs significantly better with short prompts (30-100 words) written in Chinese. The v5.1 prompt system enforces this by default.
 
 ---
 
@@ -99,7 +99,7 @@ This library teaches you to **direct** the AI, not micro-manage it. Tell the mod
 
 | Skill | Emoji | What it does |
 |:---|:---:|:---|
-| [`seedance-copyright`](skills/seedance-copyright/SKILL.md) | ⚖️ | IP rules, safe substitutions, Feb 2026 enforcement data |
+| [`seedance-copyright`](skills/seedance-copyright/SKILL.md) | ⚖️ | IP rules, safe substitutions, authorization-dependent enforcement guidance |
 | [`seedance-antislop`](skills/seedance-antislop/SKILL.md) | 🚫 | Detects and removes AI filler language and hollow superlatives from prompts |
 | [`seedance-filter`](skills/seedance-filter/SKILL.md) | 🛡️ | Content filter intelligence: diagnose false-positive blocks, write prompts that pass |
 
@@ -243,10 +243,10 @@ Seedance 2.0 includes dedicated cinematic vocabulary modules for five languages,
 
 ```
 seedance-2.0/
-├── SKILL.md                         ← Root entry point (75 lines)
+├── SKILL.md                         ← Root entry point (61 lines)
 ├── LICENSE                          ← MIT
 ├── README.md                        ← You are here
-├── CHANGELOG.md                     ← v3.0.0 → v5.0.0
+├── CHANGELOG.md                     ← v3.0.0 → v5.1.0
 ├── .github/
 │   └── CODEOWNERS                   ← @Emily2040
 ├── skills/                          ← 23 modular sub-skills
@@ -273,7 +273,7 @@ seedance-2.0/
 │   ├── seedance-vocab-ru/           ← 🇷🇺 Russian
 │   ├── seedance-filter/              ← 🛡️ Content filter intelligence
 │   └── seedance-examples-zh/        ← 🇨🇳 Chinese Working Examples
-└── references/                      ← 9 reference files
+└── references/                      ← 14 reference files
     ├── platform-constraints.md      ← Platform limits & rules
     ├── json-schema.md               ← JSON prompt schema
     ├── prompt-examples.md           ← Copy-paste examples
@@ -282,7 +282,12 @@ seedance-2.0/
     ├── genre-guides.md              ← 7-genre prompt templates
     ├── reference-workflow.md        ← @reference system guide
     ├── i2v-guide.md                 ← Image-to-Video best practices
-    └── intent-vs-precision.md       ← Intent-first prompting philosophy
+    ├── intent-vs-precision.md       ← Intent-first prompting philosophy
+    ├── api-status.md                ← Current API and platform status
+    ├── source-registry.md           ← Preferred sources for factual claims
+    ├── audio-guide.md               ← Audio layer and lip-sync patterns
+    ├── anti-slop-lexicon.md         ← Weak phrase replacement table
+    └── filter-vocab.md              ← Filter-safe vocabulary substitutions
 ```
 
 <br>
@@ -300,6 +305,11 @@ seedance-2.0/
 | [`reference-workflow.md`](references/reference-workflow.md) | The @reference system: show, don't tell |
 | [`i2v-guide.md`](references/i2v-guide.md) | Image-to-Video best practices |
 | [`intent-vs-precision.md`](references/intent-vs-precision.md) | Intent-first prompting philosophy |
+| [`api-status.md`](references/api-status.md) | Current API and platform status (dated, source-aware) |
+| [`source-registry.md`](references/source-registry.md) | Preferred sources for factual claims |
+| [`audio-guide.md`](references/audio-guide.md) | Audio layer and lip-sync patterns |
+| [`anti-slop-lexicon.md`](references/anti-slop-lexicon.md) | Weak phrase replacement table |
+| [`filter-vocab.md`](references/filter-vocab.md) | Filter-safe vocabulary substitutions |
 
 <br>
 
@@ -318,7 +328,7 @@ All 23 skills pass the [AgentSkills open standard](https://agentskills.io/) vali
 
 ## `>` Changelog
 
-See [`CHANGELOG.md`](CHANGELOG.md) for the full version history from v3.0.0 to v5.0.0.
+See [`CHANGELOG.md`](CHANGELOG.md) for the full version history from v3.0.0 to v5.1.0.
 
 <br>
 
@@ -343,7 +353,7 @@ MIT © 2026 Emily (@iamemily2050)
     <a href="https://instagram.com/iamemily2050">IG @iamemily2050</a> · 
     <a href="https://github.com/Emily2040">GitHub @Emily2040</a>
   </sub><br>
-  <sub>Source intelligence: ByteDance Seedance 2.0 official blog, Douyin creator community, CSDN practitioner tutorials, Q1 2026.</sub>
+  <sub>Source intelligence: ByteDance Seedance 2.0 official blog, BytePlus ModelArk docs, Douyin creator community, CSDN practitioner tutorials, April 2026.</sub>
 </p>
 
 ## v5.1.0 Status
