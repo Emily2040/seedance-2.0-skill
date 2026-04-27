@@ -1,3 +1,17 @@
+## 5.1.0 — 2026-04-27
+
+Validation, status, and progressive-disclosure repair release.
+
+- Fixed YAML/frontmatter structure across root and all 23 sub-skills.
+- Moved `metadata.parent` into `metadata` for sub-skills.
+- Rewrote descriptions into third-person trigger format for better skill activation.
+- Replaced stale Feb. 2026 API/face-status claims with dated April 2026 source-aware guidance.
+- Added `references/api-status.md` and `references/source-registry.md`.
+- Added validation scripts, GitHub Actions validation, and `evals/evals.json`.
+- Moved oversized legacy skill bodies into `references/migrated/` and replaced active bodies with lean routers.
+- Rewrote active studio/franchise/clone wording into IP-safer descriptors.
+
+
 # Changelog — seedance-20
 
 All notable changes to this project are documented here.

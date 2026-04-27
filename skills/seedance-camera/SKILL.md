@@ -1,11 +1,22 @@
 ---
 name: seedance-camera
-description: 'Specify camera movement, shot framing, multi-shot sequences, and anti-drift locks for Seedance 2.0. Covers dolly, crane, orbit, push-in, one-take, and storyboard reference methods. Use when writing camera instructions, shooting a scene with a specific angle or movement, or fixing a wandering or locked camera.'
+description: "This skill should be used when the user asks for camera movement, lens language, shot design, framing, tracking, dolly, crane, handheld, POV, one-take direction, or camera-transfer guidance for a Seedance 2.0 prompt."
 license: MIT
 user-invocable: true
 user-invokable: true
-tags: ["camera", "cinematography", "framing", "openclaw", "antigravity", "gemini-cli", "codex", "cursor"]
-metadata: {"version": "5.0.0", "updated": "2026-03-03", "openclaw": {"emoji": "🎥", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "parent": "seedance-20", "antigravity": {"emoji": "🎥", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "gemini-cli": {"emoji": "🎥", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "author": "Emily (@iamemily2050)", "repository": "https://github.com/Emily2040/seedance-2.0"}
+tags:
+  - seedance-20
+  - video-generation
+  - camera
+metadata:
+  version: "5.1.0"
+  updated: "2026-04-27"
+  parent: "seedance-20"
+  author: "Emily (@iamemily2050)"
+  repository: "https://github.com/Emily2040/seedance-2.0"
+  openclaw:
+    emoji: ""
+    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-camera · The One-Move Rule (v5.0)

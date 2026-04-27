@@ -1,12 +1,22 @@
 ---
 name: seedance-interview
-description: 'Guide users through a multi-stage creative journey to craft cinematic stories and single clips for Seedance 2.0. Use when a user has a vague idea, needs a script, or wants to elevate a simple prompt into a professional production brief. Follow the "Director\\'s Journey" workflow: Vision → Narrative → Visuals → Technical → Final Brief.'
+description: "This skill should be used when the user has a vague Seedance 2.0 video idea and asks for creative guidance, story development, scene planning, a director interview, or help turning an undeveloped concept into a production-ready prompt."
 license: MIT
 user-invocable: true
 user-invokable: true
-tags: ["storytelling", "creative-writing", "directing", "pre-production", "scriptwriting", "narrative-design", "cinematography", "seedance-20"]
-metadata: {"version": "5.0.0", "updated": "2026-03-03", "openclaw": {"emoji": "🎭", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "antigravity": {"emoji": "🎭", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "gemini-cli": {"emoji": "🎭", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "author": "Emily (@iamemily2050)", "repository": "https://github.com/Emily2040/seedance-2.0"}
-  "parent": "seedance-20",
+tags:
+  - seedance-20
+  - video-generation
+  - interview
+metadata:
+  version: "5.1.0"
+  updated: "2026-04-27"
+  parent: "seedance-20"
+  author: "Emily (@iamemily2050)"
+  repository: "https://github.com/Emily2040/seedance-2.0"
+  openclaw:
+    emoji: ""
+    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-interview · The Director\'s Journey (v5.0)

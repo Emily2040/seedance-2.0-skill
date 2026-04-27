@@ -1,11 +1,22 @@
 ---
 name: seedance-style
-description: 'Control visual style, render-engine tokens, animation registers, period aesthetics, CGI material contracts, and style transfer via reference for Seedance 2.0. Use when setting a specific look — cinematic, anime, 3D, vintage, photorealistic — or when style is inconsistent across a shot chain.'
+description: "This skill should be used when the user asks for visual style, period aesthetics, render look, texture, animation style, film stock, production design, style transfer, or IP-safe style descriptors for Seedance 2.0."
 license: MIT
 user-invocable: true
 user-invokable: true
-tags: ["style", "aesthetic", "transfer", "openclaw", "antigravity", "gemini-cli", "codex", "cursor"]
-metadata: {"version": "5.0.0", "updated": "2026-03-03", "openclaw": {"emoji": "🎨", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "parent": "seedance-20", "antigravity": {"emoji": "🎨", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "gemini-cli": {"emoji": "🎨", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "author": "Emily (@iamemily2050)", "repository": "https://github.com/Emily2040/seedance-2.0"}
+tags:
+  - seedance-20
+  - video-generation
+  - style
+metadata:
+  version: "5.1.0"
+  updated: "2026-04-27"
+  parent: "seedance-20"
+  author: "Emily (@iamemily2050)"
+  repository: "https://github.com/Emily2040/seedance-2.0"
+  openclaw:
+    emoji: ""
+    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-style

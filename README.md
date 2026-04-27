@@ -58,7 +58,7 @@ This library teaches you to **direct** the AI, not micro-manage it. Tell the mod
 </tr>
 </table>
 
-> ⚠️ **Feb 2026 Status**: Seedance 2.0 API global release was delayed due to copyright enforcement actions. Real-person face uploads paused Feb 15. Content filters tightened for named franchise characters, anime IPs, and streaming originals. Run `seedance-copyright` before every generation.
+> ⚠️ **Status (verified 2026-04-27):** Seedance 2.0 platform and API behavior changes quickly. For API availability, face/portrait authorization, upload limits, pricing, and regional access, check `references/api-status.md` and verify current primary sources. Real-person likeness workflows require authorization and are surface-specific. Run `seedance-copyright` before protected-IP, celebrity, brand, or real-person workflows.
 
 <br>
 
@@ -135,10 +135,10 @@ This library teaches you to **direct** the AI, not micro-manage it. Tell the mod
 | 8 | 动漫武打 Animation | Advanced | 多视频参考打斗 — multi-reference fight scene |
 | 9 | 产品展示 Product | Intermediate | 高端香水 MG 动画 — luxury perfume ad |
 | 10 | 产品展示 Product | Advanced | 多图融合产品展示 — multi-image bag showcase |
-| 11 | 产品展示 Product | Advanced | 经典广告节奏复刻 — car ad rhythm clone |
+| 11 | 产品展示 Product | Advanced | 经典广告节奏复刻 — car ad licensed rhythm reference |
 | 12 | 视觉特效 VFX | Advanced | 粒子特效片头 — gold particle title animation |
 | 13 | 运镜叙事 Cinematography | Advanced | 一镜到底追踪镜头 — one-take tracking shot |
-| 14 | 运镜叙事 Cinematography | Advanced | 动作+运镜双重复刻 — dance performance clone |
+| 14 | 运镜叙事 Cinematography | Advanced | 动作+运镜双重复刻 — dance licensed performance reference |
 | 15 | 运镜叙事 Cinematography | Advanced | 角色替换 — character replacement in video |
 | 16 | 音乐卡点 Beat Sync | Advanced | 风光片音乐卡点 — landscape beat sync |
 
@@ -345,3 +345,20 @@ MIT © 2026 Emily (@iamemily2050)
   </sub><br>
   <sub>Source intelligence: ByteDance Seedance 2.0 official blog, Douyin creator community, CSDN practitioner tutorials, Q1 2026.</sub>
 </p>
+
+## v5.1.0 Status
+
+Validated repair release focused on reliability and source hygiene.
+
+- Skill frontmatter is normalized for root plus all 23 sub-skills.
+- Sub-skills use `metadata.parent: seedance-20`.
+- Current platform/API guidance is stored in `references/api-status.md` and must be rechecked before production advice.
+- Real-person face, portrait, and voice workflows are authorization-dependent and surface-specific.
+- Protected IP, celebrity, brand-logo, studio-style, and exact-scene requests should be routed through `seedance-copyright` before final prompt output.
+- Oversized legacy content is preserved in `references/migrated/` and active skills now load lean procedural guidance first.
+
+Validation:
+```bash
+python scripts/validate_skills.py --strict
+python scripts/content_audit.py --strict
+```

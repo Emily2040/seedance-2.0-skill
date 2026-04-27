@@ -1,0 +1,224 @@
+{
+  "version": "5.1.0",
+  "updated": "2026-04-27",
+  "applied_at_utc": "2026-04-27T10:38:23.255640+00:00",
+  "shape_errors": [],
+  "changes": [
+    {
+      "path": "/home/ubuntu/seedance-2.0/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-interview/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-interview-short/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-prompt/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-prompt-short/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-camera/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-motion/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-lighting/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-characters/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-style/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-vfx/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-audio-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-audio/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-pipeline-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-pipeline/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-recipes-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-recipes/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-troubleshoot/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-copyright-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-copyright/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-antislop-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-antislop/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-filter-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-filter/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-vocab-zh-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-vocab-zh/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-vocab-ja-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-vocab-ja/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-vocab-ko-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-vocab-ko/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-vocab-es-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-vocab-es/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-vocab-ru-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-vocab-ru/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/migrated/seedance-examples-zh-original.md",
+      "action": "archive_original_body"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-examples-zh/SKILL.md",
+      "action": "normalize_skill"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/api-status.md",
+      "action": "add_reference"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/source-registry.md",
+      "action": "add_reference"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/platform-constraints.md",
+      "action": "add_reference"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/audio-guide.md",
+      "action": "add_reference"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/anti-slop-lexicon.md",
+      "action": "add_reference"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/filter-vocab.md",
+      "action": "add_reference"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/RELEASE_PLAN.md",
+      "action": "add_reference"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/scripts/validate_skills.py",
+      "action": "add_validator"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/scripts/content_audit.py",
+      "action": "add_content_audit"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/.github/workflows/validate-skills.yml",
+      "action": "add_ci"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/evals/evals.json",
+      "action": "add_evals"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/RUN_V5_1_0_VALIDATION.md",
+      "action": "add_runbook"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/CHANGELOG.md",
+      "action": "patch_markdown"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/README.md",
+      "action": "patch_markdown"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/genre-guides.md",
+      "action": "patch_markdown"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/references/quick-ref.md",
+      "action": "patch_markdown"
+    },
+    {
+      "path": "/home/ubuntu/seedance-2.0/skills/seedance-copyright/SKILL.md",
+      "action": "patch_markdown"
+    }
+  ],
+  "next_validation": [
+    "python scripts/validate_skills.py --strict",
+    "python scripts/content_audit.py --strict"
+  ]
+}

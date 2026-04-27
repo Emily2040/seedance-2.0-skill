@@ -1,18 +1,23 @@
 ---
 name: seedance-prompt-short
-description: 'Build, validate, and compress Seedance 2.0 prompts to a hard 2000-character limit using the Five-Layer Stack, @Tag delegation, and the new Compression Engine. Use when constructing or debugging any T2V, I2V, V2V, or R2V prompt for the short-form workflow.'
+description: "This skill should be used when the user wants a short, dense Seedance 2.0 prompt, Chinese prompt compression, a 30-100 word prompt, or a concise prompt that preserves subject, action, camera, lighting, reference tags, and audio cues."
 license: MIT
 user-invocable: true
 user-invokable: true
-tags: [prompt, compression, t2v, i2v, v2v, r2v, character-limit, openclaw, antigravity, gemini-cli]
-metadata: {
-  "version": "5.0.0",
-  "updated": "2026-03-03",
-  "openclaw": {"emoji": "⚡️", "homepage": "https://github.com/Emily2040/seedance-2.0"},
-  "parent": "seedance-20",
-  "author": "Emily (@iamemily2050)",
-  "repository": "https://github.com/Emily2040/seedance-2.0"
-}
+tags:
+  - seedance-20
+  - video-generation
+  - prompt
+  - short
+metadata:
+  version: "5.1.0"
+  updated: "2026-04-27"
+  parent: "seedance-20"
+  author: "Emily (@iamemily2050)"
+  repository: "https://github.com/Emily2040/seedance-2.0"
+  openclaw:
+    emoji: ""
+    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-prompt-short

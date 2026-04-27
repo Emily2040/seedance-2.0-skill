@@ -1,11 +1,22 @@
 ---
 name: seedance-motion
-description: 'Control motion timing, beat density, action choreography, and sequential video extension chains for Seedance 2.0. Covers fight-scene physics, per-shot motion contracts, and multi-clip continuation techniques. Use when motion is too fast, too slow, or jittery, when choreographing action sequences, or when extending a video across multiple clips.'
+description: "This skill should be used when the user asks for action choreography, body movement, physics, animation timing, performance motion, video-reference motion transfer, dance, fight, vehicle movement, or dynamic scene control in Seedance 2.0."
 license: MIT
 user-invocable: true
 user-invokable: true
-tags: ["motion", "choreography", "physics", "openclaw", "antigravity", "gemini-cli", "codex", "cursor"]
-metadata: {"version": "5.0.0", "updated": "2026-03-03", "openclaw": {"emoji": "🏃", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "parent": "seedance-20", "antigravity": {"emoji": "🏃", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "gemini-cli": {"emoji": "🏃", "homepage": "https://github.com/Emily2040/seedance-2.0"}, "author": "Emily (@iamemily2050)", "repository": "https://github.com/Emily2040/seedance-2.0"}
+tags:
+  - seedance-20
+  - video-generation
+  - motion
+metadata:
+  version: "5.1.0"
+  updated: "2026-04-27"
+  parent: "seedance-20"
+  author: "Emily (@iamemily2050)"
+  repository: "https://github.com/Emily2040/seedance-2.0"
+  openclaw:
+    emoji: ""
+    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-motion · Intent-First Choreography (v5.0)

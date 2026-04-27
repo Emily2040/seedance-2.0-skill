@@ -1,18 +1,23 @@
 ---
 name: seedance-interview-short
-description: 'A guided creative journey to craft a production-ready prompt under the hard 2000-character limit. Follow the "Director\\'s Journey" workflow: Vision → Narrative → Visuals → Technical → Final Compressed Brief.'
+description: "This skill should be used when the user wants a compressed Seedance 2.0 interview, quick creative intake, brief-first workflow, or fast transformation of a loose idea into a 30-100 word production brief."
 license: MIT
 user-invocable: true
 user-invokable: true
-tags: [storytelling, creative-writing, directing, pre-production, scriptwriting, prompt-compression, character-limit, seedance-20]
-metadata: {
-  "version": "5.0.0",
-  "updated": "2026-03-03",
-  "openclaw": {"emoji": "🎙️", "homepage": "https://github.com/Emily2040/seedance-2.0"},
-  "parent": "seedance-20",
-  "author": "Emily (@iamemily2050)",
-  "repository": "https://github.com/Emily2040/seedance-2.0"
-}
+tags:
+  - seedance-20
+  - video-generation
+  - interview
+  - short
+metadata:
+  version: "5.1.0"
+  updated: "2026-04-27"
+  parent: "seedance-20"
+  author: "Emily (@iamemily2050)"
+  repository: "https://github.com/Emily2040/seedance-2.0"
+  openclaw:
+    emoji: ""
+    homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
 # seedance-interview-short (v5.0)

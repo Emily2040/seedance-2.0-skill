@@ -150,8 +150,8 @@ This reference provides genre-specific prompt templates and best practices for t
 
 | Template | Prompt Example |
 | :--- | :--- |
-| **Cel-Shaded Action** | `An anime warrior with white hair, in the style of Studio Trigger. He draws a glowing blue sword. Dynamic low-angle shot. Bold outlines, flat color fills, high-contrast shading. Explosive energy.` |
-| **Watercolor Animation** | `A Ghibli-style scene of a girl in a field of flowers. A gentle breeze makes the flowers and her dress sway. Soft, watercolor wash backgrounds and ink outline characters. Dreamy and nostalgic.` |
+| **Cel-Shaded Action** | `An anime warrior with white hair, with bold ink outlines, flat color fills, high-contrast cel shading, and smear frames on fast motion. He draws a glowing blue sword. Dynamic low-angle shot. Bold outlines, flat color fills, high-contrast shading. Explosive energy.` |
+| **Watercolor Animation** | `A soft hand-painted storybook animation style scene of a girl in a field of flowers. A gentle breeze makes the flowers and her dress sway. Soft, watercolor wash backgrounds and ink outline characters. Dreamy and nostalgic.` |
 | **Stop-Motion** | `A claymation character bakes a tiny cake in a cozy kitchen. The animation has a slightly jerky, handmade feel. Visible fingerprints on the clay. Warm, miniature lighting.` |
 | **Pixel Art** | `A knight walks through a pixel art forest. 16-bit style. The color palette is limited to greens and browns. The camera is a static side-scroller view.` |
 
@@ -162,6 +162,6 @@ This reference provides genre-specific prompt templates and best practices for t
 - **Prompt Length:** 50-90 words
 
 **Common Pitfalls:**
-- **Rule #1: One style anchor beats five adjectives.** Instead of `soft dreamy hand-painted`, use `Studio Ghibli watercolor style`.
+- **Rule #1: One style anchor beats five adjectives.** Instead of `soft dreamy hand-painted`, use `soft hand-painted storybook animation watercolor style`.
 - Do not use the names of specific copyrighted shows or characters. Reference the *studio* or the *art style*.
 - Specify animation techniques like `motion on twos` or `smear frames` for more authentic results.

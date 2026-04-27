@@ -1,80 +1,14 @@
-# platform-constraints · Seedance 2.0 (Q1 2026)
-# Last verified: 2026-02-26 against ByteDance official launch blog + multiple third-party guides
+# Platform Constraints
 
-## Generation Duration
+last_verified: 2026-04-27
 
-| Platform | Min | Max | Notes |
-|---|---|---|---|
-| Web (Dreamina/Jimeng) | 4 s | 15 s | User-selectable slider |
-| All platforms | 4 s | 15 s | No confirmed mobile-specific cap |
+For current API status, pricing, regional access, model names, and official upload limits, load `references/api-status.md` and check primary sources.
 
-> ⚠️ An earlier version of this file listed "5–10 s mobile" — that distinction is **unconfirmed**. All verified sources say 4–15 s universally.
+Stable guidance:
+- Do not assume all Seedance 2.0 surfaces have identical capabilities.
+- Treat real-person likeness, portrait, and voice workflows as authorization-dependent.
+- Do not provide copyrighted-character, celebrity, brand-logo, exact-scene, or voice-cloning instructions without a safe rewrite or explicit authorization context.
+- Do not rely on static claims about duration, aspect ratio, reference-file counts, pricing, or API endpoints without checking current docs.
 
-## Resolution
-
-| Tier | Resolution |
-|---|---|
-| Default | 720p |
-| Standard | 1080p |
-| Premium | 2K |
-
-## File Budget — Rule of 12
-
-| Type | Max count | Duration/size limit | Format |
-|---|---|---|---|
-| Image | 9 | — | JPG · PNG · WEBP |
-| Video | 3 | **15 s TOTAL across all 3** | MP4 · MOV |
-| Audio | 3 | **15 s TOTAL across all 3** | MP3 |
-| **Total files** | **12** | — | — |
-
-> ⚠️ The 15-second video limit is **combined total**, not per-file. Three 5-second clips = 15 s, which hits the ceiling. File size per video not confirmed from primary sources.
-
-## Aspect Ratios
-
-`16:9` · `9:16` · `4:3` · `3:4` · `21:9` · `1:1`
-
-> v3.1.0 and earlier only listed four ratios. 3:4 and 21:9 confirmed via apiyi.com technical guide.
-
-## Audio Output
-
-Dual-channel stereo (synchronized audio-video joint generation).
-
-## Negative Prompts
-
-**NOT SUPPORTED.** Seedance 2.0 does not accept negative prompt syntax (`--no`, `negative:`, etc.).
-Use positive constraints instead: describe what you *want*, not what you don't want.
-
-```
-❌  --no watermark --no distorted hands
-✅  clean background, stable hands, no overlaid text
-    [describe the positive constraint in plain language]
-```
-
-## API Status (as of 2026-02-26)
-
-| Channel | Status |
-|---|---|
-| Jimeng / Dreamina web | ✅ Live (paying members) |
-| Volcengine console debugging | ✅ Available for testing |
-| **Official Volcengine API** | ❌ **Delayed — was planned Feb 24; postponed due to copyright dispute** |
-| BytePlus (international) | ❌ Not yet officially launched |
-| Third-party proxy APIs (AtlasCloud, APIYI) | Available but unofficial |
-
-> Until the official API launches, do **not** plan production integrations against a Seedance 2.0 API endpoint.
-
-## Platforms
-
-| Surface | URL / App |
-|---|---|
-| Web | jimeng.jianying.com (Dreamina) |
-| Mobile | CapCut · Jianying |
-| API (pending) | Volcengine / BytePlus — launch date TBD |
-
-## Prompt Length Guidance
-
-| Language | Simple scene | Complex choreography |
-|---|---|---|
-| English | 30–100 words | 300–1000+ words |
-| Chinese | 50–200 characters | 500–1000+ characters |
-
-Shorter prompts → higher motion quality in most cases.
+User-facing wording:
+> Platform support varies by surface. As of 2026-04-27, official BytePlus/ModelArk documentation includes Seedance 2.0 video-generation API material, and ByteDance's Seedance 2.0 page describes image, audio, and video references. Check current docs for account, region, pricing, upload-limit, and portrait-authorization requirements.

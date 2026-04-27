@@ -135,7 +135,7 @@ Run before every generation:
 | 6. Logo | Recognizable logo in output? | Describe geometry only |
 
 **Current hard-blocked entities** (post-Feb-15 filter tightening):
-Spider-Man · Darth Vader · Iron Man · Deadpool · Shrek · SpongeBob · Eleven (Stranger Things) · Squid Game guard · all named anime characters · all named real actors
+an original masked acrobat hero · Darth Vader · Iron Man · Deadpool · Shrek · SpongeBob · Eleven (Stranger Things) · Squid Game guard · all named anime characters · all named real actors
 
 **API status**: Official API delayed (was Feb 24). **No public API exists yet.** Web platform (jimeng.jianying.com) is live. Third-party proxies available but unofficial.
 
