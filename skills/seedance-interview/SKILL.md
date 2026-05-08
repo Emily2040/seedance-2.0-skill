@@ -3,14 +3,13 @@ name: seedance-interview
 description: "This skill should be used when the user has a vague Seedance 2.0 video idea and asks for creative guidance, story development, scene planning, a director interview, or help turning an undeveloped concept into a production-ready prompt."
 license: MIT
 user-invocable: true
-user-invokable: true
 tags:
   - creative-direction
   - interview
   - brief
   - seedance-20
 metadata:
-  version: "5.2.0"
+  version: "5.3.0"
   updated: "2026-05-08"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -19,7 +18,6 @@ metadata:
     emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
-
 
 # seedance-interview
 

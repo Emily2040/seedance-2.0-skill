@@ -3,7 +3,6 @@ name: seedance-copyright
 description: "This skill should be used when a Seedance 2.0 prompt mentions named characters, franchises, studios, celebrities, public figures, private people, brand logos, copyrighted scenes, songs, voices, or real-person likeness workflows and needs an IP-safe rewrite."
 license: MIT
 user-invocable: true
-user-invokable: true
 tags:
   - copyright
   - ip
@@ -11,7 +10,7 @@ tags:
   - safety
   - seedance-20
 metadata:
-  version: "5.2.0"
+  version: "5.3.0"
   updated: "2026-05-08"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -21,17 +20,31 @@ metadata:
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
-
 # seedance-copyright
 
-Use this before finalizing prompts involving protected IP, named brands, public figures, private people, voices, logos, songs, or exact scenes.
+Use this before finalizing prompts involving protected IP, named brands, public figures, private people, voices, logos, songs, studios, exact scenes, or lookalike character requests. The goal is not to dilute the idea; the goal is to preserve the creative function with original, authorized, and safer production language.
 
 ## Rewrite Principle
 
-Preserve the scene function, genre, mood, camera logic, and emotional beat. Replace protected identity with an original archetype and production descriptors.
+Preserve the scene function, genre, mood, camera logic, emotional beat, and production intent. Replace protected identity with an original archetype, original costume logic, original world details, and descriptive style layers.
 
-Avoid lookalike costumes, exact slogans, logos, character names, studio names, song titles, or voice imitation.
+| Risk | Replace with |
+|---|---|
+| Named character or franchise | Original archetype, genre function, and non-identical costume language |
+| Studio or living-creator style | Medium, texture, palette, composition, line quality, and motion rhythm |
+| Celebrity or private person | Original performer description or authorized reference workflow |
+| Brand logo | Generic product mark, blank label, or user-owned brand if explicitly authorized |
+| Song, voice, or performance | Tempo, energy, instrumentation, mood, or newly composed sound direction |
+| Exact scene recreation | Original scene with similar narrative function and different setting/blocking |
+
+## Authorization Gate
+
+If the user clearly owns the brand, asset, or likeness rights, keep the authorized elements but still preserve them with explicit constraints. If authorization is unclear, ask a short confirmation or provide a safe original rewrite. Do not assume rights from an uploaded image, song, or video.
+
+## Safe Replacement Example
+
+Instead of a named superhero swinging through a recognizable franchise city, write: `original masked rooftop courier in a red weatherproof jacket leaps between rain-slick buildings, low handheld tracking camera, blue police lights far below, no logos or franchise symbols`.
 
 ## Output Contract
 
-Return risk category, what was changed, safe replacement prompt, and any authorization requirement.
+Return risk category, what was changed, safe replacement prompt, authorization requirement, and any residual constraints.

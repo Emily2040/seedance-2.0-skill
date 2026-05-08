@@ -3,14 +3,13 @@ name: seedance-characters
 description: "This skill should be used when the user asks for character consistency, character tags, identity lock, multi-character blocking, wardrobe continuity, hand safety, expression control, or likeness-sensitive character guidance."
 license: MIT
 user-invocable: true
-user-invokable: true
 tags:
   - characters
   - identity
   - consistency
   - seedance-20
 metadata:
-  version: "5.2.0"
+  version: "5.3.0"
   updated: "2026-05-08"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -20,17 +19,35 @@ metadata:
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
-
 # seedance-characters
 
-Use this for identity, consistency, multi-character blocking, and expression control.
+Use this for identity, consistency, multi-character blocking, wardrobe continuity, hand safety, expression control, and likeness-sensitive character guidance. Character prompting must remove ambiguity before adding style.
 
 ## Character Contract
 
-Assign each character a stable tag: `Character A`, `Character B`, `[Image1] subject`, or a user-provided name. After more than one character appears, do not use ambiguous pronouns.
+Assign each character a stable tag: `Character A`, `Character B`, `[Image1] subject`, or a user-provided original name. After more than one character appears, do not use ambiguous pronouns. Keep tag, role, appearance, wardrobe, position, action, and emotional beat consistent.
 
-For real-person likeness, do not infer consent from an uploaded asset. Treat portrait, face, and voice workflows as authorization-dependent and surface-specific.
+| Field | Prompt use |
+|---|---|
+| Tag | `Character A` or `[Image1] subject` |
+| Identity anchor | Age range, silhouette, hair, wardrobe, or authorized reference role |
+| Position | Foreground/background, left/right, seated/standing |
+| Action | One assigned verb and endpoint |
+| Expression | Observable behavior such as blink, glance, smile, grip, pause |
+| Constraint | What must stay unchanged |
+
+## Multi-Character Blocking
+
+Assign actions separately: `Character A lowers the envelope; Character B remains in the doorway`. Do not write `they argue dramatically` when the model must decide who moves. If contact occurs, describe the contact point and endpoint. For crowd scenes, identify the hero subject and keep background motion simple.
+
+## Hand and Face Stability
+
+Hands and faces degrade under complex choreography. Keep hands visible but simple, avoid rapid finger actions, avoid face-touching during dialogue, and lock the camera for lip-sync or portrait preservation. Use props to show emotion when facial precision is fragile.
+
+## Likeness Rule
+
+For real-person likeness, do not infer consent from an uploaded asset. Treat portrait, face, and voice workflows as authorization-dependent and surface-specific. If authorization is unclear, rewrite to an original character archetype while preserving the scene function.
 
 ## Output Contract
 
-Return a character card, tag map, action assignments, and any safety constraints.
+Return a character card, tag map, action assignments, continuity constraints, and any safety or authorization note.

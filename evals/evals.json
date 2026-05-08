@@ -1,5 +1,5 @@
 {
-  "version": "5.2.0",
+  "version": "5.3.0",
   "updated": "2026-05-08",
   "cases": [
     {
@@ -267,6 +267,123 @@
       "skills_expected_to_activate": [
         "seedance-antislop",
         "seedance-vocab-zh"
+      ]
+    },
+    {
+      "id": "vfx_physics_endpoint",
+      "prompt": "Add blue energy around a floating key without making it noisy.",
+      "expected_output": "VFX prompt with source, path, light interaction, dissipation, and endpoint.",
+      "assertions": [
+        "names effect source",
+        "describes material behavior and dissipation",
+        "protects nearby identity anchors"
+      ],
+      "failure_mode": "generic noisy VFX overlay",
+      "skills_expected_to_activate": [
+        "seedance-vfx"
+      ]
+    },
+    {
+      "id": "spanish_prompt_translation",
+      "prompt": "Translate this product I2V prompt into Spanish and keep Image1 unchanged.",
+      "expected_output": "Spanish prompt preserving reference tags and product constraints.",
+      "assertions": [
+        "uses Spanish production vocabulary",
+        "keeps Image1 unchanged",
+        "preserves logo and shape constraint"
+      ],
+      "failure_mode": "translated reference tag or lost preservation",
+      "skills_expected_to_activate": [
+        "seedance-vocab-es",
+        "seedance-prompt-short"
+      ]
+    },
+    {
+      "id": "japanese_prompt_translation",
+      "prompt": "Give me a compact Japanese prompt for a locked portrait I2V.",
+      "expected_output": "Japanese prompt with locked framing, micro-performance, and unchanged reference tag.",
+      "assertions": [
+        "uses Japanese camera and motion terms",
+        "keeps reference tags unchanged",
+        "limits face motion for stability"
+      ],
+      "failure_mode": "literal translation without production constraints",
+      "skills_expected_to_activate": [
+        "seedance-vocab-ja",
+        "seedance-characters"
+      ]
+    },
+    {
+      "id": "korean_prompt_translation",
+      "prompt": "Make this action prompt concise in Korean but keep the motion clear.",
+      "expected_output": "Korean prompt preserving action verb, endpoint, camera, and sound.",
+      "assertions": [
+        "uses Korean cinematic vocabulary",
+        "preserves action endpoint",
+        "keeps sound cue or silence instruction"
+      ],
+      "failure_mode": "lossy multilingual compression",
+      "skills_expected_to_activate": [
+        "seedance-vocab-ko",
+        "seedance-motion"
+      ]
+    },
+    {
+      "id": "russian_dialogue_prompt",
+      "prompt": "Write a Russian Seedance prompt where the character speaks one short line clearly.",
+      "expected_output": "Russian prompt with quoted short dialogue, stable framing, and lip-sync constraints.",
+      "assertions": [
+        "uses Russian prompt wording",
+        "quotes one short line",
+        "stabilizes framing for lip-sync"
+      ],
+      "failure_mode": "dialogue desync from overactive blocking",
+      "skills_expected_to_activate": [
+        "seedance-vocab-ru",
+        "seedance-audio"
+      ]
+    },
+    {
+      "id": "chinese_examples_safe_rewrite",
+      "prompt": "Give safe Chinese examples and rewrite a protected character prompt.",
+      "expected_output": "Chinese examples labeled safe/needs-owned-reference/rewrite-required with safe variants.",
+      "assertions": [
+        "labels example risk",
+        "removes protected identity",
+        "returns safer Chinese variant"
+      ],
+      "failure_mode": "unsafe Chinese example leakage",
+      "skills_expected_to_activate": [
+        "seedance-examples-zh",
+        "seedance-copyright"
+      ]
+    },
+    {
+      "id": "anti_slop_rewrite",
+      "prompt": "Make this cinematic epic beautiful dynamic video more professional.",
+      "expected_output": "Anti-slop rewrite replacing vague boosters with camera, light, motion, and material detail.",
+      "assertions": [
+        "identifies filler words",
+        "replaces with observable production language",
+        "returns tightened prompt"
+      ],
+      "failure_mode": "keeps hollow quality boosters",
+      "skills_expected_to_activate": [
+        "seedance-antislop"
+      ]
+    },
+    {
+      "id": "short_interview_three_questions",
+      "prompt": "I need a fast brief for a weird sci-fi food ad, ask only what matters.",
+      "expected_output": "Short interview with at most three high-impact questions and a compact brief route.",
+      "assertions": [
+        "asks no more than three questions",
+        "prioritizes subject action references",
+        "routes to prompt writing"
+      ],
+      "failure_mode": "long questionnaire despite short-interview request",
+      "skills_expected_to_activate": [
+        "seedance-interview-short"
       ]
     }
   ]

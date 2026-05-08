@@ -1,30 +1,27 @@
-# Chinese Cinematic Vocabulary
+# Chinese Vocabulary
 
-## Camera
+Use this reference for Chinese Seedance prompt wording and compact prompt compression. Keep reference tags unchanged.
 
-- 推镜: push-in
-- 拉镜: pull-out
-- 横移跟拍: lateral tracking
-- 环绕镜头: orbit shot
-- 低机位: low angle
-- 俯拍: overhead shot
+| Function | Chinese | English meaning |
+|---|---|---|
+| Camera | `缓慢推镜` | slow push-in |
+| Camera | `横向稳定跟拍` | stable lateral tracking |
+| Camera | `固定中景` | locked medium shot |
+| Camera | `微距特写` | macro close-up |
+| Camera | `低角度仰拍` | low-angle shot |
+| Lighting | `柔和侧逆光` | soft side backlight |
+| Lighting | `左侧暖色实用灯` | warm practical light from left |
+| Lighting | `冷色月光轮廓光` | cool moon rim light |
+| Lighting | `体积光穿过薄雾` | volumetric light through mist |
+| Motion | `脚步带动薄雾扩散` | footsteps disturb fog |
+| Motion | `水珠聚合后沿表面下滑` | droplets merge and slide down |
+| Motion | `缓慢转头并停住` | slow head turn and stop |
+| VFX | `金色粒子升起后消散` | gold particles rise and dissipate |
+| VFX | `蓝色电弧沿边缘游走` | blue arcs crawl along the edge |
+| Audio | `一句短而清晰的对白` | one short clear spoken line |
+| Audio | `无配乐，仅低环境声` | no music, low ambience only |
+| Constraint | `严格保持logo、标签、形状不变` | keep logo, label, shape unchanged |
 
-## Lighting
+## Compact Template
 
-- 侧逆光: side backlight
-- 柔光: soft light
-- 体积光: volumetric light
-- 冷色月光: cool moonlight
-- 暖色实用灯: warm practical light
-
-## Motion
-
-- 缓慢转身: slow turn
-- 衣料随风摆动: cloth moves in the wind
-- 雾气被脚步扰动: fog disturbed by footsteps
-
-## Audio
-
-- 低沉环境声: low ambience
-- 轻微金属声: subtle metallic sound
-- 一句短对白: one short spoken line
+`[Image1]为参考，严格保持[主体/产品]不变；仅加入[动作/光线/镜头]。镜头：[一个动作]。声音：[音效或环境声]。`

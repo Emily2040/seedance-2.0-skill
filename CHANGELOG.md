@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here.
 
+## [5.3.0] — 2026-05-08
+
+### Fixed
+
+- Removed the legacy duplicate `user-invokable` frontmatter key and updated the validator to the canonical `user-invocable` field.
+- Expanded formerly thin production modules, multilingual vocabulary routers, and reference glossaries so each skill is useful as a standalone entry point.
+- Deepened `references/source-registry.md` with source hierarchy, evidence labels, claim boundaries, and required wording for volatile platform claims.
+
+### Changed
+
+- Updated all skill metadata, README badges, validator text, and eval metadata to `5.3.0`.
+- Recompressed the root `SKILL.md` into a lean router while keeping detailed guidance in sub-skills and references.
+
+### Added
+
+- Added eight eval cases covering VFX physics, multilingual vocabulary, Chinese examples, anti-slop repair, and short-interview routing.
+
 ## [5.2.0] — 2026-05-08
 
 ### Fixed
@@ -22,7 +39,7 @@ All notable changes to this project are documented here.
 - New SVG frontend assets: `assets/hero-dark.svg`, `assets/hero-light.svg`, and `assets/skill-map.svg`.
 - Validation scripts: `scripts/validate_skills.py`, `scripts/content_audit.py`, `scripts/eval_schema_check.py`, and `scripts/design_audit.py`.
 - CI workflow: `.github/workflows/validate-skills.yml`.
-- Evals: `evals/evals.json` with 14 realistic test cases.
+- Evals: `evals/evals.json` with 18 realistic test cases.
 - References: `api-status.md`, `source-registry.md`, `audio-guide.md`, `anti-slop-lexicon.md`, `filter-vocab.md`, `progressive-disclosure.md`, `eval-rubric.md`, and `frontend-design-system.md`.
 
 ## [5.1.0] — 2026-05-08

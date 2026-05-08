@@ -10,17 +10,17 @@
 
 Text-to-video · Image-to-video · Video-to-video · Reference-to-video · Audio-aware prompting · Copyright-safe rewrites · Agent Skills
 
-[![Version](https://img.shields.io/badge/version-5.2.0-111827?labelColor=0f172a)](#changelog)
+[![Version](https://img.shields.io/badge/version-5.3.0-111827?labelColor=0f172a)](#changelog)
 [![Skills](https://img.shields.io/badge/sub--skills-23-0ea5e9?labelColor=0f172a)](#skill-map)
 [![References](https://img.shields.io/badge/references-22-8b5cf6?labelColor=0f172a)](#reference-library)
-[![Evals](https://img.shields.io/badge/evals-18-22c55e?labelColor=0f172a)](#validation)
+[![Evals](https://img.shields.io/badge/evals-26-22c55e?labelColor=0f172a)](#validation)
 [![License](https://img.shields.io/badge/license-MIT-f59e0b?labelColor=0f172a)](LICENSE)
 
 Author: [Iamemily2050 (@iamemily2050)](https://github.com/Emily2040) · [Instagram](https://instagram.com/iamemily2050) · [X](https://x.com/iamemily2050) · [Website](https://iamemily2050.com)
 
 Platform context: [ByteDance Seedance 2.0](https://seed.bytedance.com/en/seedance2_0) · [Dreamina](https://dreamina.capcut.com) · [Jimeng](https://jimeng.jianying.com) · [BytePlus ModelArk](https://docs.byteplus.com/en/docs/ModelArk/2291680)
 
-Updated: **2026-05-08** · **v5.2.0 design, validation, eval, and progressive-disclosure release**
+Updated: **2026-05-08** · **v5.3.0 production-depth, multilingual, source, and eval coverage release**
 
 ---
 
@@ -153,11 +153,11 @@ The CI workflow runs the same checks on push and pull request.
 
 ## Design Standard
 
-The v5.2 frontend intentionally removes bloated neon copy and collapsed Markdown. The README should stay readable in GitHub mobile, dark mode, and narrow widths. SVG assets must include `<title>` and `<desc>` elements, use internal CSS only, and avoid external fonts or scripts. See [`docs/frontend-redesign.md`](docs/frontend-redesign.md).
+The v5.3 frontend intentionally keeps the cleaned v5.2 design language while adding deeper production guidance, multilingual coverage, and eval breadth. The README should stay readable in GitHub mobile, dark mode, and narrow widths. SVG assets must include `<title>` and `<desc>` elements, use internal CSS only, and avoid external fonts or scripts. See [`docs/frontend-redesign.md`](docs/frontend-redesign.md).
 
 ## Changelog
 
-See [`CHANGELOG.md`](CHANGELOG.md). Current release: **v5.2.0**.
+See [`CHANGELOG.md`](CHANGELOG.md). Current release: **v5.3.0**.
 
 ## License
 

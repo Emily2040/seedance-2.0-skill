@@ -3,14 +3,13 @@ name: seedance-pipeline
 description: "This skill should be used when the user asks about Seedance 2.0 workflow operations, API planning, BytePlus ModelArk, Dreamina/Jimeng surfaces, ComfyUI, post-production, stitching, batch workflow, or integration planning."
 license: MIT
 user-invocable: true
-user-invokable: true
 tags:
   - workflow
   - api
   - integration
   - seedance-20
 metadata:
-  version: "5.2.0"
+  version: "5.3.0"
   updated: "2026-05-08"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -19,7 +18,6 @@ metadata:
     emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
-
 
 # seedance-pipeline
 

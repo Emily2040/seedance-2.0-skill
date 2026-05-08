@@ -57,7 +57,7 @@ REQUIRED_FILES = [
     "docs/frontend-redesign.md",
 ]
 
-REQUIRED_FIELDS = ["name", "description", "license", "user-invocable", "user-invokable", "tags", "metadata"]
+REQUIRED_FIELDS = ["name", "description", "license", "user-invocable", "tags", "metadata"]
 
 
 def split_frontmatter(text: str) -> tuple[str, str]:
@@ -135,8 +135,8 @@ def validate_skill(path: Path, root: Path, errors: list[str], warnings: list[str
         if metadata_value(frontmatter, "parent") != "seedance-20":
             errors.append(f"{rel}: missing metadata.parent: seedance-20")
 
-    if metadata_value(frontmatter, "version") != "5.2.0":
-        errors.append(f"{rel}: metadata.version must be 5.2.0")
+    if metadata_value(frontmatter, "version") != "5.3.0":
+        errors.append(f"{rel}: metadata.version must be 5.3.0")
 
     description = value_for(frontmatter, "description") or ""
     if not description.startswith("This skill should be used when"):
@@ -213,7 +213,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print(f"Validated root plus {len(EXPECTED_SKILLS)} sub-skills and required v5.2 files.")
+    print(f"Validated root plus {len(EXPECTED_SKILLS)} sub-skills and required v5.3 files.")
     return 0
 
 

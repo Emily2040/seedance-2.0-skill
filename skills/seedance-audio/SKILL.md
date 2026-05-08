@@ -3,14 +3,13 @@ name: seedance-audio
 description: "This skill should be used when the user asks for Seedance 2.0 audio, dialogue, lip-sync, music, sound effects, ambience, beat-sync, audio-reference mapping, desync troubleshooting, or sound-driven visual timing."
 license: MIT
 user-invocable: true
-user-invokable: true
 tags:
   - audio
   - lip-sync
   - dialogue
   - seedance-20
 metadata:
-  version: "5.2.0"
+  version: "5.3.0"
   updated: "2026-05-08"
   parent: "seedance-20"
   author: "Iamemily2050 (@iamemily2050)"
@@ -20,22 +19,36 @@ metadata:
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
-
 # seedance-audio
 
-Use this for dialogue, lip-sync, sound layers, music, ambience, and audio reference behavior.
+Use this for dialogue, lip-sync, sound layers, music, ambience, beat-sync, audio-reference mapping, desync troubleshooting, or sound-driven visual timing. Audio should support the visible beat instead of becoming a second competing prompt.
 
 ## Core Rules
 
-- Keep dialogue short.
-- Put spoken lines in quotes.
-- Assign every line to a speaker.
-- Prefer locked or stable framing for lip-sync.
-- Remove head-turning and face-motion tokens when mouth accuracy matters.
-- Treat `[Audio1]` as a reference unless the active platform documents exact playback behavior.
+Keep dialogue short, quote spoken lines, and assign every line to a named speaker. Prefer locked or stable framing for lip-sync. Remove head-turning, large face motion, extreme camera moves, or busy hand gestures while mouth accuracy matters. Treat `[Audio1]` as a rhythm, pacing, mood, voice-tone, or ambience reference unless the active platform documents exact playback behavior.
+
+## Sound Layer Pattern
+
+Use compact layers: `Dialogue: ... Sound: ... SFX: ... Music: ... Silence: ...`. Include only the layers that matter. Silence is valid when it sharpens drama or avoids confusing lip-sync.
+
+| Need | Stable audio direction |
+|---|---|
+| Lip-sync | `Character A, locked medium close-up, says "I found it." Clear dry dialogue, no head turn.` |
+| Product ad | `Sound: low room tone. SFX: magnetic click on lid open, soft glass chime at final frame.` |
+| Beat sync | `[Audio1] provides tempo only; light pulses and foot taps match the downbeat.` |
+| Drama | `Distant rain and refrigerator hum; no music during the line.` |
+| Action | `Breathing grows louder, shoe squeak at landing, metal door buzzer at endpoint.` |
+
+## Multi-Character Dialogue
+
+Use one speaker per short clip when reliability matters. If two characters must speak, separate turns and keep the camera stable: `Character A says... pause. Character B answers...`. For complex exchanges, recommend generating controlled single-speaker clips and compositing in post.
+
+## Failure Fixes
+
+If dialogue desyncs, shorten the line, lock the camera, remove head turns, clean the audio role, and reduce competing SFX. If the wrong speaker talks, assign tags and split lines by speaker. If audio is ignored, remove extra music/SFX instructions and make the reference role explicit.
 
 Load `[ref:audio-guide]` for detailed constraints, beat-sync, desync repair, and multi-character workarounds.
 
 ## Output Contract
 
-Return speaker map, dialogue, sound layer, audio reference role, and lip-sync constraints.
+Return speaker map, quoted dialogue, sound layers, audio reference role, lip-sync constraints, and a compact prompt-ready audio block.
