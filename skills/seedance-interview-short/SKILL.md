@@ -1,54 +1,40 @@
 ---
 name: seedance-interview-short
-description: "This skill should be used when the user wants a compressed Seedance 2.0 interview, quick creative intake, brief-first workflow, or fast transformation of a loose idea into a 30-100 word production brief."
+description: "This skill should be used when the user wants a fast Seedance 2.0 creative brief, a short interview, a compressed intake flow, or a quick director-style clarification before prompt writing."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
+  - creative-direction
+  - brief
+  - compression
   - seedance-20
-  - video-generation
-  - interview
-  - short
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
-# seedance-interview-short (v5.0)
 
-This skill transforms a simple idea into a professional, **sub-2000-character** Seedance 2.0 production brief, with a target of **30-100 words**.
+# seedance-interview-short
 
-## The Workflow
+Use this when speed matters more than exhaustive creative discovery.
 
-1.  **The Vision & Genre**: Ask for a 1-sentence concept and a genre from [ref:genre-guides].
-2.  **Reference Media**: Ask if the user has any `@Image`, `@Video`, or `@Audio` references.
-3.  **"Quick Mode" Exit**: If the user has strong references, offer to switch to the [skill:seedance-prompt] skill to build a prompt directly.
-4.  **Narrative Core**: If needed, ask 1-2 questions to find the emotional anchor.
-5.  **Build & Compress**: Construct the prompt using the Director's Formula, keeping a live character count.
+## Process
 
-## The Interviewer's Craft
+Ask at most three questions. Prioritize:
 
--   Prioritize action verbs and physics over descriptive adjectives.
--   Explain that shorter, denser prompts perform better.
--   Use the character budget as a creative constraint, not just a technical one.
+1. What is the subject doing?
+2. What should it feel like?
+3. Are there image, video, or audio references?
 
-### Final Output Format
+If the user gives a clear answer, produce a compact brief and route to prompt writing.
 
-```
-**Final Prompt (185/2000 chars):**
+## Output Contract
 
-[PROMPT TEXT]
-
----
-
-**Director's Notes:**
-- **Genre:** [User's chosen genre]
-- **Core Intent:** [Summary of emotional goal]
-- **References:** [@Image1, @Video1]
-```
+Return one compact brief under 150 words plus a recommended skill route.

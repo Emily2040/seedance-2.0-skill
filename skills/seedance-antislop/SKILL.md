@@ -1,37 +1,42 @@
 ---
 name: seedance-antislop
-description: "This skill should be used when the user wants to remove AI filler language, hollow superlatives, generic cinematic fluff, vague adjectives, or non-actionable wording from a Seedance 2.0 prompt."
+description: "This skill should be used when a Seedance 2.0 prompt contains generic AI filler, hollow superlatives, vague cinematic language, bloated adjectives, weak verbs, or needs sharper production-specific wording."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
-  - seedance-20
   - prompt-quality
   - anti-slop
-  - compression
+  - seedance-20
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-antislop
 
-Use this skill to remove generic AI-video filler and convert vague language into observable production instructions.
+Remove filler that hides missing visual decisions.
 
-Test: if a camera operator, lighting technician, actor, or editor cannot act on a word, replace it.
+## Test
 
-Remove first: cinematic masterpiece, ultra realistic, breathtaking, stunning, beautiful, epic, professional quality, dramatic atmosphere, magical, dreamy, highly detailed.
+Every major phrase should be visible to a camera, measurable by a light meter, audible in the mix, or observable as motion.
 
-Replace with: subject noun, action verb, one camera move, light source, material texture, timing, reference role, physical consequence, audio cue.
+Replace:
 
-Compression order: reference tags -> subject nouns -> action verbs -> camera move -> light source -> audio cue -> style constraint. Delete generic adjectives first.
+- `epic` with scale, lens, motion, or stakes.
+- `cinematic` with shot scale, camera move, lighting, or grade.
+- `beautiful` with material, color, composition, or light behavior.
+- `dynamic` with a specific movement and endpoint.
 
-Return the cleaned prompt, removed phrases, and one sentence explaining the compression tradeoff.
+Load `[ref:anti-slop-lexicon]` for the extended replacement table.
 
-Legacy details moved to `references/migrated/seedance-antislop-original.md`.
+## Output Contract
+
+Return removed words, replacements, and the tightened prompt.

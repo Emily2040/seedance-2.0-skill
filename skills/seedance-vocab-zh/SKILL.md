@@ -1,33 +1,36 @@
 ---
 name: seedance-vocab-zh
-description: "This skill should be used when the user asks for Chinese Seedance 2.0 prompt wording, Mandarin cinematic vocabulary, Chinese prompt compression, or translation of camera, lighting, action, VFX, audio, or production terms into Chinese."
+description: "This skill should be used when the user asks for Chinese Seedance 2.0 prompt wording, Mandarin cinematic vocabulary, Chinese prompt compression, or translation of camera, lighting, action, VFX, audio, and production terms into Chinese."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
+  - chinese
+  - vocabulary
   - seedance-20
-  - video-generation
-  - vocab
-  - zh
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-vocab-zh
 
-Use this skill for Chinese Seedance 2.0 prompt wording and cinematic vocabulary. Keep active skill guidance lean; extended legacy term lists were moved to `references/migrated/seedance-vocab-zh-original.md`.
+Use Chinese vocabulary when the user asks for Chinese prompts or maximum compactness.
 
-Rules:
-- Translate production intent, not word-for-word English filler.
-- Preserve reference tags exactly: `[Image1]`, `[Video1]`, `[Audio1]`.
-- Preserve concrete nouns, action verbs, camera moves, light sources, and sound cues before style adjectives.
-- Avoid protected names, studio names, celebrity names, and brand names unless the workflow is authorized.
+## Core Terms
 
-Return: compact Chinese prompt, optional English back-translation, key vocabulary choices, and safety/IP notes if relevant.
+- Camera: 推镜, 拉镜, 环绕, 跟拍, 低角度, 特写, 中景, 远景
+- Motion: 慢慢转身, 快速掠过, 轻微颤动, 稳定推进, 节奏卡点
+- Lighting: 逆光, 侧光, 柔光, 冷色月光, 暖色实用灯, 体积光
+- Audio: 环境声, 低沉鼓点, 风声, 脚步声, 人声清晰, 口型同步
+
+## Output Contract
+
+Return concise Chinese prompt text and preserve reference tags such as `[Image1]`, `[Video1]`, and `[Audio1]`.

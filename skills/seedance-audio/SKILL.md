@@ -1,38 +1,41 @@
 ---
 name: seedance-audio
-description: "This skill should be used when the user asks for native audio, dialogue, lip-sync, voice, sound effects, music timing, beat sync, ambient sound, audio references, or audio-video synchronization in Seedance 2.0."
+description: "This skill should be used when the user asks for Seedance 2.0 audio, dialogue, lip-sync, music, sound effects, ambience, beat-sync, audio-reference mapping, desync troubleshooting, or sound-driven visual timing."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
-  - seedance-20
   - audio
   - lip-sync
-  - sound-design
+  - dialogue
+  - seedance-20
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-audio
 
-Use this skill for dialogue, lip-sync, music timing, sound effects, ambient sound, and audio-reference planning.
+Use this for dialogue, lip-sync, sound layers, music, ambience, and audio reference behavior.
 
-Return: audio goal, speaker/source assignment, prompt-ready wording, sync constraints, risk notes, and retry variant.
+## Core Rules
 
-Rules:
-- Keep spoken lines short and assign each line to a specific character.
-- Separate dialogue, ambience, SFX, and music.
-- Map references by role: `[Audio1] rhythm`, `[Audio2] voice tone`, `[Audio3] ambience`.
-- Do not claim universal language, duration, or voice-cloning support. Check `[ref:api-status]`.
-- Real-person voices and likeness workflows require authorization and platform-specific support.
+- Keep dialogue short.
+- Put spoken lines in quotes.
+- Assign every line to a speaker.
+- Prefer locked or stable framing for lip-sync.
+- Remove head-turning and face-motion tokens when mouth accuracy matters.
+- Treat `[Audio1]` as a reference unless the active platform documents exact playback behavior.
 
-Prompt pattern: `[Character A] says: "short line." Quiet [environment ambience], [specific SFX], [music/rhythm cue]. Lip movement synchronized to the spoken line; camera and body motion remain simple enough to preserve sync.`
+Load `[ref:audio-guide]` for detailed constraints, beat-sync, desync repair, and multi-character workarounds.
 
-Legacy details moved to `references/migrated/seedance-audio-original.md`.
+## Output Contract
+
+Return speaker map, dialogue, sound layer, audio reference role, and lip-sync constraints.

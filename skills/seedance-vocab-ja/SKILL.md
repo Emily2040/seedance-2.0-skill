@@ -1,33 +1,35 @@
 ---
 name: seedance-vocab-ja
-description: "This skill should be used when the user asks for Japanese Seedance 2.0 prompt wording, Japanese cinematic vocabulary, Japanese prompt compression, or translation of camera, lighting, action, VFX, audio, or production terms into Japanese."
+description: "This skill should be used when the user asks for Japanese Seedance 2.0 prompt wording, Japanese cinematic vocabulary, or translation of camera, lighting, action, VFX, audio, and production terms into Japanese."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
+  - japanese
+  - vocabulary
   - seedance-20
-  - video-generation
-  - vocab
-  - ja
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-vocab-ja
 
-Use this skill for Japanese Seedance 2.0 prompt wording and cinematic vocabulary. Keep active skill guidance lean; extended legacy term lists were moved to `references/migrated/seedance-vocab-ja-original.md`.
+Use Japanese cinematic vocabulary when requested.
 
-Rules:
-- Translate production intent, not word-for-word English filler.
-- Preserve reference tags exactly: `[Image1]`, `[Video1]`, `[Audio1]`.
-- Preserve concrete nouns, action verbs, camera moves, light sources, and sound cues before style adjectives.
-- Avoid protected names, studio names, celebrity names, and brand names unless the workflow is authorized.
+## Core Terms
 
-Return: compact Japanese prompt, optional English back-translation, key vocabulary choices, and safety/IP notes if relevant.
+Camera: ドリーイン, トラッキングショット, ローアングル, クローズアップ.
+Lighting: 逆光, 柔らかい光, 月明かり, 実用照明.
+Motion: ゆっくり振り返る, 素早く横切る, 滑らかに移動する.
+
+## Output Contract
+
+Return Japanese prompt wording and keep reference tags unchanged.

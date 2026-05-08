@@ -1,115 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="480" viewBox="0 0 1200 480" role="img" aria-labelledby="title desc">
+  <title>Seedance 2.0 Skill OS hero</title>
+  <desc>A dark cinematic dashboard showing the Seedance 2.0 intent-first filmmaking workflow.</desc>
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#f6f8fa;stop-opacity:1"/>
-      <stop offset="50%" style="stop-color:#ffffff;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#f0f0f5;stop-opacity:1"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="0.55" stop-color="#eef2ff"/>
+      <stop offset="1" stop-color="#dbeafe"/>
     </linearGradient>
-    <linearGradient id="neon1" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#0066ff;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1"/>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.45" stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#f472b6"/>
     </linearGradient>
-    <linearGradient id="neon2" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#e11d48;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1"/>
-    </linearGradient>
-    <filter id="glow1">
-      <feGaussianBlur stdDeviation="2" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glow3">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="18"/></filter>
+    <style>
+      .small{font:500 22px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#cbd5e1}
+      .title{font:800 76px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc;letter-spacing:-2px}
+      .subtitle{font:500 28px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#e2e8f0}
+      .label{font:700 18px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .muted{font:500 15px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#94a3b8}
+      .card{fill:#0f172a;stroke:#334155;stroke-width:1.5;rx:22}
+      .line{stroke:url(#accent);stroke-width:4;stroke-linecap:round}
+    </style>
   </defs>
-
-  <!-- Background -->
-  <rect width="900" height="320" fill="url(#bg)"/>
-
-  <!-- Grid lines (subtle) -->
-  <g opacity="0.06" stroke="#0066ff">
-    <line x1="0" y1="40" x2="900" y2="40" stroke-width="0.5"/>
-    <line x1="0" y1="80" x2="900" y2="80" stroke-width="0.5"/>
-    <line x1="0" y1="120" x2="900" y2="120" stroke-width="0.5"/>
-    <line x1="0" y1="160" x2="900" y2="160" stroke-width="0.5"/>
-    <line x1="0" y1="200" x2="900" y2="200" stroke-width="0.5"/>
-    <line x1="0" y1="240" x2="900" y2="240" stroke-width="0.5"/>
-    <line x1="0" y1="280" x2="900" y2="280" stroke-width="0.5"/>
-    <line x1="100" y1="0" x2="100" y2="320" stroke-width="0.5"/>
-    <line x1="200" y1="0" x2="200" y2="320" stroke-width="0.5"/>
-    <line x1="300" y1="0" x2="300" y2="320" stroke-width="0.5"/>
-    <line x1="400" y1="0" x2="400" y2="320" stroke-width="0.5"/>
-    <line x1="500" y1="0" x2="500" y2="320" stroke-width="0.5"/>
-    <line x1="600" y1="0" x2="600" y2="320" stroke-width="0.5"/>
-    <line x1="700" y1="0" x2="700" y2="320" stroke-width="0.5"/>
-    <line x1="800" y1="0" x2="800" y2="320" stroke-width="0.5"/>
-  </g>
-
-  <!-- Animated floating particles -->
-  <g filter="url(#glow3)">
-    <circle cx="120" cy="60" r="1.5" fill="#0066ff" opacity="0.5">
-      <animate attributeName="cy" values="60;50;60" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="250" cy="250" r="1" fill="#7c3aed" opacity="0.4">
-      <animate attributeName="cy" values="250;240;250" dur="3s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="780" cy="80" r="1.5" fill="#e11d48" opacity="0.5">
-      <animate attributeName="cy" values="80;68;80" dur="5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="650" cy="270" r="1" fill="#0066ff" opacity="0.3">
-      <animate attributeName="cy" values="270;258;270" dur="3.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="50" cy="180" r="1.2" fill="#f59e0b" opacity="0.4">
-      <animate attributeName="cy" values="180;170;180" dur="4.5s" repeatCount="indefinite"/>
-    </circle>
-    <circle cx="830" cy="190" r="1" fill="#7c3aed" opacity="0.3">
-      <animate attributeName="cy" values="190;178;190" dur="3.8s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-
-  <!-- Orbiting rings -->
-  <ellipse cx="160" cy="160" rx="80" ry="30" fill="none" stroke="#0066ff" stroke-width="0.5" opacity="0.1" transform="rotate(-20 160 160)">
-    <animateTransform attributeName="transform" type="rotate" from="-20 160 160" to="340 160 160" dur="20s" repeatCount="indefinite"/>
-  </ellipse>
-  <ellipse cx="740" cy="160" rx="70" ry="25" fill="none" stroke="#7c3aed" stroke-width="0.5" opacity="0.08" transform="rotate(15 740 160)">
-    <animateTransform attributeName="transform" type="rotate" from="15 740 160" to="375 740 160" dur="25s" repeatCount="indefinite"/>
-  </ellipse>
-
-  <!-- Horizontal line -->
-  <line x1="200" y1="210" x2="700" y2="210" stroke="url(#neon1)" stroke-width="1" opacity="0.25">
-    <animate attributeName="opacity" values="0.25;0.1;0.25" dur="3s" repeatCount="indefinite"/>
-  </line>
-
-  <!-- Title -->
-  <text x="450" y="120" text-anchor="middle" font-family="'SF Mono','Fira Code','Cascadia Code',monospace" font-size="52" font-weight="700" fill="url(#neon1)" filter="url(#glow1)" letter-spacing="6">
-    SEEDANCE 2.0
-  </text>
-
-  <!-- Subtitle -->
-  <text x="450" y="158" text-anchor="middle" font-family="'SF Mono','Fira Code','Cascadia Code',monospace" font-size="14" fill="#57606a" letter-spacing="8">
-    QUAD-MODAL AI FILMMAKING ENGINE
-  </text>
-
-  <!-- Mode badges -->
-  <g transform="translate(450, 240)" text-anchor="middle">
-    <rect x="-195" y="-14" width="80" height="28" rx="14" fill="none" stroke="#0066ff" stroke-width="1" opacity="0.5"/>
-    <text x="-155" y="5" font-family="'SF Mono',monospace" font-size="11" fill="#0066ff" text-anchor="middle" letter-spacing="1">T2V</text>
-    <rect x="-95" y="-14" width="80" height="28" rx="14" fill="none" stroke="#7c3aed" stroke-width="1" opacity="0.5"/>
-    <text x="-55" y="5" font-family="'SF Mono',monospace" font-size="11" fill="#7c3aed" text-anchor="middle" letter-spacing="1">I2V</text>
-    <rect x="5" y="-14" width="80" height="28" rx="14" fill="none" stroke="#e11d48" stroke-width="1" opacity="0.5"/>
-    <text x="45" y="5" font-family="'SF Mono',monospace" font-size="11" fill="#e11d48" text-anchor="middle" letter-spacing="1">V2V</text>
-    <rect x="105" y="-14" width="80" height="28" rx="14" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
-    <text x="145" y="5" font-family="'SF Mono',monospace" font-size="11" fill="#f59e0b" text-anchor="middle" letter-spacing="1">R2V</text>
-  </g>
-
-  <!-- Version tag -->
-  <text x="450" y="290" text-anchor="middle" font-family="'SF Mono',monospace" font-size="10" fill="#8b949e" letter-spacing="3">
-    v3.6.0  ·  BY EMILY (@IAMEMILY2050)  ·  MIT LICENSE
-  </text>
-
-  <!-- Corner accents -->
-  <polyline points="0,30 0,0 30,0" fill="none" stroke="#0066ff" stroke-width="1.5" opacity="0.2"/>
-  <polyline points="870,0 900,0 900,30" fill="none" stroke="#7c3aed" stroke-width="1.5" opacity="0.2"/>
-  <polyline points="0,290 0,320 30,320" fill="none" stroke="#e11d48" stroke-width="1.5" opacity="0.2"/>
-  <polyline points="870,320 900,320 900,290" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.2"/>
+  <rect width="1200" height="480" fill="#f8fafc"/>
+  <circle cx="970" cy="80" r="180" fill="#7c3aed" opacity="0.25" filter="url(#soft)"/>
+  <circle cx="1050" cy="360" r="160" fill="#06b6d4" opacity="0.16" filter="url(#soft)"/>
+  <path d="M0 372 C190 320 310 410 500 365 C720 312 820 235 1200 290" fill="none" stroke="#38bdf8" opacity="0.18" stroke-width="2"/>
+  <text x="70" y="92" class="small">v5.2.0 · validated agent-skill system</text>
+  <text x="70" y="178" class="title">Seedance 2.0</text>
+  <text x="70" y="248" class="title">Skill OS</text>
+  <text x="74" y="306" class="subtitle">Intent-first quad-modal AI filmmaking</text>
+  <line x1="74" y1="342" x2="520" y2="342" class="line"/>
+  <text x="74" y="386" class="small">Prompt → References → Guardrails → Output</text>
+  <rect x="690" y="72" width="390" height="330" class="card"/>
+  <text x="728" y="120" class="label">System snapshot</text>
+  <text x="728" y="166" class="muted">23 modular skills</text>
+  <text x="728" y="212" class="muted">14 reference files</text>
+  <text x="728" y="258" class="muted">14 eval cases</text>
+  <text x="728" y="304" class="muted">API status dated 2026-05-08</text>
+  <text x="728" y="350" class="muted">README + SVG frontend audited</text>
+  <rect x="950" y="112" width="36" height="36" rx="10" fill="#22d3ee" opacity="0.9"/>
+  <rect x="950" y="158" width="36" height="36" rx="10" fill="#a78bfa" opacity="0.9"/>
+  <rect x="950" y="204" width="36" height="36" rx="10" fill="#f472b6" opacity="0.9"/>
+  <rect x="950" y="250" width="36" height="36" rx="10" fill="#22c55e" opacity="0.9"/>
+  <rect x="950" y="296" width="36" height="36" rx="10" fill="#f59e0b" opacity="0.9"/>
 </svg>

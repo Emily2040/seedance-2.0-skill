@@ -1,85 +1,221 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import argparse, json, re
+
+import argparse
+import json
+import re
+import sys
 from pathlib import Path
-EXPECTED = ['seedance-antislop','seedance-audio','seedance-camera','seedance-characters','seedance-copyright','seedance-examples-zh','seedance-filter','seedance-interview-short','seedance-interview','seedance-lighting','seedance-motion','seedance-pipeline','seedance-prompt-short','seedance-prompt','seedance-recipes','seedance-style','seedance-troubleshoot','seedance-vfx','seedance-vocab-es','seedance-vocab-ja','seedance-vocab-ko','seedance-vocab-ru','seedance-vocab-zh']
-REQ_REFS = ['references/api-status.md','references/source-registry.md','references/platform-constraints.md','references/audio-guide.md','references/anti-slop-lexicon.md','references/filter-vocab.md']
-REQ_FILES = ['scripts/validate_skills.py','scripts/content_audit.py','.github/workflows/validate-skills.yml','evals/evals.json']
-STALE = ['Feb 2026 Status','API global release was delayed','real-person face uploads paused']
-REQUIRED = ['name','description','license','user-invocable','user-invokable','tags','metadata']
-def split_fm(text):
-    text = text.lstrip('\ufeff')
-    if not text.startswith('---'): raise ValueError('missing opening ---')
-    rest = text[3:]; end = rest.find('---')
-    if end < 0: raise ValueError('missing closing ---')
-    return rest[:end].strip(), rest[end+3:].lstrip()
-def top_keys(fm):
-    keys=[]
-    for line in fm.splitlines():
-        if not line.strip() or line.lstrip().startswith('#'): continue
-        if not line.startswith(' ') and ':' in line:
-            keys.append(line.split(':',1)[0].strip())
+
+EXPECTED_SKILLS = [
+    "seedance-antislop", "seedance-audio", "seedance-camera", "seedance-characters",
+    "seedance-copyright", "seedance-examples-zh", "seedance-filter", "seedance-interview",
+    "seedance-interview-short", "seedance-lighting", "seedance-motion", "seedance-pipeline",
+    "seedance-prompt", "seedance-prompt-short", "seedance-recipes", "seedance-style",
+    "seedance-troubleshoot", "seedance-vfx", "seedance-vocab-es", "seedance-vocab-ja",
+    "seedance-vocab-ko", "seedance-vocab-ru", "seedance-vocab-zh",
+]
+
+REQUIRED_REFERENCES = [
+    "references/api-status.md",
+    "references/source-registry.md",
+    "references/platform-constraints.md",
+    "references/quick-ref.md",
+    "references/audio-guide.md",
+    "references/anti-slop-lexicon.md",
+    "references/filter-vocab.md",
+    "references/frontend-design-system.md",
+    "references/json-schema.md",
+    "references/reference-workflow.md",
+    "references/i2v-guide.md",
+    "references/genre-guides.md",
+    "references/storytelling-framework.md",
+    "references/intent-vs-precision.md",
+    "references/eval-rubric.md",
+    "references/progressive-disclosure.md",
+    "references/prompt-examples.md",
+    "references/vocab/zh.md",
+    "references/vocab/ja.md",
+    "references/vocab/ko.md",
+    "references/vocab/es.md",
+    "references/vocab/ru.md",
+]
+
+REQUIRED_FILES = [
+    "README.md",
+    "SKILL.md",
+    "CHANGELOG.md",
+    "scripts/validate_skills.py",
+    "scripts/content_audit.py",
+    "scripts/eval_schema_check.py",
+    "scripts/design_audit.py",
+    ".github/workflows/validate-skills.yml",
+    "evals/evals.json",
+    "assets/hero-dark.svg",
+    "assets/hero-light.svg",
+    "assets/skill-map.svg",
+    "docs/frontend-redesign.md",
+]
+
+REQUIRED_FIELDS = ["name", "description", "license", "user-invocable", "user-invokable", "tags", "metadata"]
+
+
+def split_frontmatter(text: str) -> tuple[str, str]:
+    text = text.lstrip("\ufeff")
+    lines = text.splitlines()
+    if not lines or lines[0].strip() != "---":
+        raise ValueError("frontmatter must start with a standalone --- line")
+    try:
+        end = next(i for i, line in enumerate(lines[1:], start=1) if line.strip() == "---")
+    except StopIteration as exc:
+        raise ValueError("frontmatter must end with a standalone --- line") from exc
+    return "\n".join(lines[1:end]), "\n".join(lines[end + 1:])
+
+
+def top_keys(frontmatter: str) -> list[str]:
+    keys = []
+    for line in frontmatter.splitlines():
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        if not line.startswith(" ") and ":" in line:
+            keys.append(line.split(":", 1)[0].strip())
     return keys
-def value_for(fm, key):
-    m=re.search(rf'^{re.escape(key)}:\s*(.*)$', fm, re.M)
-    if not m: return None
-    v=m.group(1).strip()
-    if len(v)>=2 and v[0] in '"\'' and v[-1]==v[0]: v=v[1:-1]
-    return v
-def metadata_value(fm, key):
-    in_meta=False
-    for line in fm.splitlines():
-        if line.startswith('metadata:'): in_meta=True; continue
-        if in_meta:
-            if line and not line.startswith(' '): break
-            m=re.match(rf'^\s+{re.escape(key)}:\s*(.*)$', line)
-            if m:
-                v=m.group(1).strip()
-                if len(v)>=2 and v[0] in '"\'' and v[-1]==v[0]: v=v[1:-1]
-                return v
+
+
+def value_for(frontmatter: str, key: str) -> str | None:
+    match = re.search(rf"^{re.escape(key)}:\s*(.*)$", frontmatter, re.MULTILINE)
+    if not match:
+        return None
+    value = match.group(1).strip()
+    if len(value) >= 2 and value[0] in {'\"', "'"} and value[-1] == value[0]:
+        value = value[1:-1]
+    return value
+
+
+def metadata_value(frontmatter: str, key: str) -> str | None:
+    in_metadata = False
+    for line in frontmatter.splitlines():
+        if line.startswith("metadata:"):
+            in_metadata = True
+            continue
+        if in_metadata and line and not line.startswith(" "):
+            break
+        if in_metadata:
+            match = re.match(rf"^\s+{re.escape(key)}:\s*(.*)$", line)
+            if match:
+                value = match.group(1).strip()
+                if len(value) >= 2 and value[0] in {'\"', "'"} and value[-1] == value[0]:
+                    value = value[1:-1]
+                return value
     return None
-def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('repo', nargs='?', default='.'); ap.add_argument('--strict', action='store_true'); args=ap.parse_args()
-    root=Path(args.repo).resolve(); errors=[]; warnings=[]
-    skill_files=[root/'SKILL.md']+[root/'skills'/n/'SKILL.md' for n in EXPECTED]
-    for path in skill_files:
-        if not path.exists(): errors.append(f'missing skill file: {path.relative_to(root)}'); continue
-        try:
-            fm, body = split_fm(path.read_text(encoding='utf-8'))
-        except Exception as exc:
-            errors.append(f'{path.relative_to(root)}: frontmatter parse error: {exc}'); continue
-        rel=str(path.relative_to(root)); keys=top_keys(fm)
-        for field in REQUIRED:
-            if field not in keys: errors.append(f'{rel}: missing `{field}`')
-        if 'parent' in keys: errors.append(f'{rel}: illegal top-level `parent`; must be inside metadata')
-        if path != root/'SKILL.md' and metadata_value(fm,'parent') != 'seedance-20': errors.append(f'{rel}: missing metadata.parent=seedance-20')
-        desc=value_for(fm,'description') or ''
-        if 'This skill should be used when' not in desc: warnings.append(f'{rel}: description should use third-person trigger phrasing')
-        if metadata_value(fm,'version') != '5.1.0': warnings.append(f'{rel}: metadata.version is not 5.1.0')
-        name=value_for(fm,'name')
-        if path != root/'SKILL.md' and path.parent.name.startswith('seedance-') and name != path.parent.name: errors.append(f'{rel}: name does not match folder')
-    dirs=sorted(p.name for p in (root/'skills').glob('seedance-*') if p.is_dir()) if (root/'skills').exists() else []
-    missing=sorted(set(EXPECTED)-set(dirs)); extra=sorted(set(dirs)-set(EXPECTED))
-    if missing: errors.append('missing expected sub-skill dirs: '+', '.join(missing))
-    if extra: warnings.append('extra sub-skill dirs: '+', '.join(extra))
-    for rel in REQ_REFS+REQ_FILES:
-        if not (root/rel).exists(): errors.append(f'missing required v5.1.0 file: {rel}')
-    ev=root/'evals'/'evals.json'
-    if ev.exists():
-        try:
-            cases=json.loads(ev.read_text(encoding='utf-8')).get('cases',[])
-            if len(cases)<10: errors.append('evals/evals.json must contain at least 10 cases')
-        except Exception as exc: errors.append(f'evals/evals.json parse error: {exc}')
-    for rel in ['README.md','SKILL.md','references/platform-constraints.md','references/api-status.md']:
-        path=root/rel
+
+
+def validate_skill(path: Path, root: Path, errors: list[str], warnings: list[str]) -> None:
+    rel = path.relative_to(root).as_posix()
+    text = path.read_text(encoding="utf-8")
+    try:
+        frontmatter, body = split_frontmatter(text)
+    except Exception as exc:
+        errors.append(f"{rel}: {exc}")
+        return
+
+    keys = top_keys(frontmatter)
+    for field in REQUIRED_FIELDS:
+        if field not in keys:
+            errors.append(f"{rel}: missing top-level field `{field}`")
+
+    if "parent" in keys:
+        errors.append(f"{rel}: illegal top-level `parent`; use metadata.parent")
+
+    name = value_for(frontmatter, "name")
+    if path != root / "SKILL.md" and path.name == "SKILL.md" and path.parent.name.startswith("seedance-") and name != path.parent.name:
+        errors.append(f"{rel}: name `{name}` does not match folder `{path.parent.name}`")
+
+    if path != root / "SKILL.md":
+        if metadata_value(frontmatter, "parent") != "seedance-20":
+            errors.append(f"{rel}: missing metadata.parent: seedance-20")
+
+    if metadata_value(frontmatter, "version") != "5.2.0":
+        errors.append(f"{rel}: metadata.version must be 5.2.0")
+
+    description = value_for(frontmatter, "description") or ""
+    if not description.startswith("This skill should be used when"):
+        errors.append(f"{rel}: description must use third-person activation wording")
+
+    if len(body.strip()) < 200:
+        warnings.append(f"{rel}: body is very short")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("repo", nargs="?", default=".")
+    parser.add_argument("--strict", action="store_true")
+    args = parser.parse_args()
+
+    root = Path(args.repo).resolve()
+    errors: list[str] = []
+    warnings: list[str] = []
+
+    for rel in REQUIRED_FILES + REQUIRED_REFERENCES:
+        if not (root / rel).exists():
+            errors.append(f"missing required file: {rel}")
+
+    skill_root = root / "skills"
+    dirs = sorted(path.name for path in skill_root.glob("seedance-*") if path.is_dir()) if skill_root.exists() else []
+    missing = sorted(set(EXPECTED_SKILLS) - set(dirs))
+    extra = sorted(set(dirs) - set(EXPECTED_SKILLS))
+    if missing:
+        errors.append("missing expected skill dirs: " + ", ".join(missing))
+    if extra:
+        warnings.append("extra skill dirs: " + ", ".join(extra))
+
+    validate_skill(root / "SKILL.md", root, errors, warnings)
+    for name in EXPECTED_SKILLS:
+        path = root / "skills" / name / "SKILL.md"
         if path.exists():
-            text=path.read_text(encoding='utf-8', errors='ignore')
-            for phrase in STALE:
-                if phrase in text: errors.append(f'{rel} contains stale active-status phrase: {phrase}')
+            validate_skill(path, root, errors, warnings)
+
+
+    pycache = root / "scripts" / "__pycache__"
+    if pycache.exists():
+        errors.append("scripts/__pycache__ must not be committed")
+    for pyc in root.rglob("*.pyc"):
+        rel = pyc.relative_to(root).as_posix()
+        if not rel.startswith(".seedance_backups/"):
+            errors.append(f"compiled Python cache must not be committed: {rel}")
+
+    eval_path = root / "evals" / "evals.json"
+    if eval_path.exists():
+        try:
+            data = json.loads(eval_path.read_text(encoding="utf-8"))
+            cases = data.get("cases", [])
+            if len(cases) < 16:
+                errors.append("evals/evals.json must contain at least 16 cases")
+        except Exception as exc:
+            errors.append(f"evals/evals.json parse error: {exc}")
+
+    for rel in ["scripts/validate_skills.py", "scripts/content_audit.py", "scripts/eval_schema_check.py", "scripts/design_audit.py"]:
+        path = root / rel
+        if path.exists():
+            line_count = len(path.read_text(encoding="utf-8").splitlines())
+            if line_count < 20:
+                errors.append(f"{rel}: script appears collapsed or incomplete ({line_count} lines)")
+
     if warnings:
-        print('WARNINGS:'); [print('- '+w) for w in warnings]; print()
+        print("WARNINGS:")
+        for warning in warnings:
+            print(f"- {warning}")
+        print()
+
     if errors:
-        print('ERRORS:'); [print('- '+e) for e in errors]; return 1
-    print(f'Validated {len(skill_files)} skill files, {len(REQ_REFS)} required references, CI workflow, and evals.')
+        print("ERRORS:")
+        for error in errors:
+            print(f"- {error}")
+        return 1
+
+    print(f"Validated root plus {len(EXPECTED_SKILLS)} sub-skills and required v5.2 files.")
     return 0
-if __name__ == '__main__': raise SystemExit(main())
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

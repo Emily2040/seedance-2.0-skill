@@ -1,15 +1,21 @@
 # Source Registry
 
-last_verified: 2026-04-27
+last_verified: 2026-05-08
 
 Use this registry before making factual claims about Seedance 2.0 platform behavior.
 
-| Topic | Preferred Source | Status | Notes |
+| Topic | Preferred source | Evidence label | Notes |
 |---|---|---|---|
-| Core model capabilities | https://seed.bytedance.com/en/seedance2_0 | Primary | Official ByteDance model page. |
-| API docs | https://docs.byteplus.com/en/docs/ModelArk/1520757 | Primary | BytePlus ModelArk video generation API reference. |
-| Tutorial | https://docs.byteplus.com/en/docs/ModelArk/2291680 | Primary | Dreamina Seedance 2.0 tutorial. |
-| Product surface | https://www.byteplus.com/en/product/seedance | Primary/commercial | Check access/pricing language against docs. |
-| Repo claims | README.md, SKILL.md, references/* | Internal | Must be kept current with primary sources. |
+| Core model capabilities | ByteDance Seedance 2.0 official page | confirmed | Use for text/image/audio/video input claims. |
+| Launch capabilities and known limits | ByteDance Seedance 2.0 launch blog | confirmed | Use for multimodal reference, editing, audio, and known limitations. |
+| API tutorial | BytePlus ModelArk Dreamina Seedance 2.0 series tutorial | confirmed | Use for API workflow existence and tutorial recency. |
+| Video-generation API | BytePlus ModelArk Seedance 2.0 API reference | confirmed | Use for task-creation/retrieval path existence. |
+| Pricing and region | BytePlus pricing and region pages | volatile | Always recheck before giving numbers. |
+| Community practice | Douyin, Bilibili, CSDN, creator notes | likely or unverified | Mark as field observation, not official truth. |
+| Repo guidance | README, SKILL.md, references | internal | Must be kept aligned with primary sources. |
 
-Evidence labels: confirmed, likely, unverified. Any claim about API availability, regional access, pricing, reference-file limits, duration, portrait authorization, copyright enforcement, or content-filter behavior must carry either a source link or a `last_verified` date.
+Evidence labels:
+
+- `confirmed`: directly visible in primary source.
+- `likely`: repeated practitioner pattern but not officially guaranteed.
+- `unverified`: plausible but requires testing or owner confirmation.

@@ -1,47 +1,43 @@
 ---
 name: seedance-prompt-short
-description: "This skill should be used when the user wants a short, dense Seedance 2.0 prompt, Chinese prompt compression, a 30-100 word prompt, or a concise prompt that preserves subject, action, camera, lighting, reference tags, and audio cues."
+description: "This skill should be used when the user asks for a compact Seedance 2.0 prompt, short Chinese prompt, prompt compression, 30-100 word output, or removal of unnecessary prompt language."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
+  - prompt-compression
+  - chinese-prompt
   - seedance-20
-  - video-generation
-  - prompt
-  - short
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-prompt-short
 
-This skill helps construct and compress prompts for Seedance 2.0, with a recommended target of **30-100 words**.
+Compress Seedance prompts without losing the production signal.
 
-## The 30-100 Word Target
+## Compression Priority
 
-| Layer | Budget (chars) | Purpose |
-|:---|:---:|:---|
-| **1. Core Intent** | ~20-40 words | Subject + Action. The emotional and narrative heart. |
-| **2. Visuals** | ~20-30 words | Camera + Lighting + Style. The cinematic eye. |
-| **3. Audio** | ~10-20 words | Music + SFX + Ambience. The soundscape. |
-| **4. Technical** | ~10-20 words | @Tags + Constraints + Physics. The rules. |
+Preserve in this order:
 
-| **Total** | **~30-100 words** | **Recommended Target** |
+1. Reference tags.
+2. Subject nouns.
+3. Action verbs.
+4. Camera move.
+5. Light source or atmosphere.
+6. Audio cue.
+7. Safety or continuity constraint.
 
-## The Compression Engine
+Delete generic adjectives before deleting physical details.
 
-- **Verbs > Adjectives**: `A woman's face, catching the last light` not `A beautiful, stunning shot`.
-- **Show, Don't Tell Emotion**: `His shoulders slump` not `He is sad`.
-- **Use Film Language**: `Dolly shot, camera-left` not `The camera moves smoothly`.
-- **Trust the Model**: `Gourmet hamburger ad, macro shot` not a long description of a hamburger.
+## Output Contract
 
----
-
-For a guided workflow that builds a prompt, use [skill:seedance-interview].
+Return one compact prompt, ideally 30-100 English words or an equivalent Chinese prompt when the user asks for Chinese or maximum compression.

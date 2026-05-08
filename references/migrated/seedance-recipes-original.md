@@ -101,4 +101,4 @@ An anime [character type] with [features], in the style of [studio/artist]. They
 
 ---
 
-*Maintained by [Emily (@iamemily2050)](https://github.com/Emily2040)*
+*Maintained by [Iamemily2050 (@iamemily2050)](https://github.com/Emily2040)*

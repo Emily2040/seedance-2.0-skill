@@ -1,0 +1,13 @@
+# Generated Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local editor and OS noise
+.DS_Store
+*.swp
+*.swo
+
+# Local audit outputs
+*.tmp
+*.log

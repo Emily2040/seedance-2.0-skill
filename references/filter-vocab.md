@@ -1,13 +1,16 @@
 # Filter-Safe Vocabulary
 
-This file provides neutral substitutions for legitimate creative scenes. It is not a bypass guide.
+Use professional, non-graphic, production-context language. Do not use this reference to bypass safety systems.
 
-| Risky wording pattern | Safer production wording |
+| Risky surface | Safer production wording |
 |---|---|
-| clone/copy/replicate a video | reference-informed pacing, using owned/licensed reference |
-| violent impact | fast choreography beat with visible reaction |
-| weapon focus | prop-neutral action blocking |
-| celebrity likeness | fictional character with original features |
-| named franchise character | original archetype with distinct costume |
-| studio style | production descriptors: line weight, palette, texture, lighting |
-| branded logo reveal | unbranded product silhouette or authorized brand mark |
+| violent impact | high-energy collision, non-graphic action beat |
+| weapon close-up | prop object held safely, action-scene staging |
+| blood | red fabric accent, colored liquid, non-graphic aftermath |
+| injury | visible fatigue, dramatic tension, character distress |
+| fight | choreographed action sequence, staged confrontation |
+| celebrity face | original character with broad archetype traits |
+| brand logo | generic product mark or blank label |
+| named franchise | original world with similar genre function |
+
+Preserve intent. Change risky surface wording.

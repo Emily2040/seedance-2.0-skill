@@ -1,33 +1,35 @@
 ---
 name: seedance-vocab-ko
-description: "This skill should be used when the user asks for Korean Seedance 2.0 prompt wording, Korean cinematic vocabulary, Korean prompt compression, or translation of camera, lighting, action, VFX, audio, or production terms into Korean."
+description: "This skill should be used when the user asks for Korean Seedance 2.0 prompt wording, Korean cinematic vocabulary, or translation of camera, lighting, action, VFX, audio, and production terms into Korean."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
+  - korean
+  - vocabulary
   - seedance-20
-  - video-generation
-  - vocab
-  - ko
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-vocab-ko
 
-Use this skill for Korean Seedance 2.0 prompt wording and cinematic vocabulary. Keep active skill guidance lean; extended legacy term lists were moved to `references/migrated/seedance-vocab-ko-original.md`.
+Use Korean cinematic vocabulary when requested.
 
-Rules:
-- Translate production intent, not word-for-word English filler.
-- Preserve reference tags exactly: `[Image1]`, `[Video1]`, `[Audio1]`.
-- Preserve concrete nouns, action verbs, camera moves, light sources, and sound cues before style adjectives.
-- Avoid protected names, studio names, celebrity names, and brand names unless the workflow is authorized.
+## Core Terms
 
-Return: compact Korean prompt, optional English back-translation, key vocabulary choices, and safety/IP notes if relevant.
+Camera: 돌리 인, 트래킹 샷, 로우 앵글, 클로즈업.
+Lighting: 역광, 부드러운 조명, 달빛, 실내 실용 조명.
+Motion: 천천히 돌아선다, 빠르게 스쳐 지나간다, 안정적으로 이동한다.
+
+## Output Contract
+
+Return Korean prompt wording and keep reference tags unchanged.

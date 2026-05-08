@@ -1,38 +1,41 @@
 ---
 name: seedance-pipeline
-description: "This skill should be used when the user asks how to run Seedance 2.0 through a web workflow, official API, BytePlus/Volcengine ModelArk, ComfyUI, Firebase Studio, third-party integration, post-processing chain, or production pipeline."
+description: "This skill should be used when the user asks about Seedance 2.0 workflow operations, API planning, BytePlus ModelArk, Dreamina/Jimeng surfaces, ComfyUI, post-production, stitching, batch workflow, or integration planning."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
-  - seedance-20
-  - pipeline
+  - workflow
   - api
-  - byteplus
-  - volcengine
+  - integration
+  - seedance-20
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-pipeline
 
-Use this skill for web UI, official API, BytePlus/Volcengine ModelArk, ComfyUI/community nodes, third-party surfaces, and post-production chains.
+Use this for operational workflows, APIs, web surfaces, post-production, and integration planning.
 
-First rule: always check `[ref:api-status]` before giving API, pricing, upload-limit, face/portrait, or regional-availability advice. Do not repeat stale Feb. 2026 API-delay claims.
+## Status Rule
 
-Workflow split:
-- Creator/web workflow: prompt, upload references, iterate manually.
-- Official API workflow: use current BytePlus/ModelArk docs; avoid hardcoding endpoints unless docs are loaded.
-- Third-party workflow: label as unofficial or third-party and warn that pricing/limits/safety may diverge.
-- Post-production workflow: edit, upscale, interpolate, mix sound, subtitle, and assemble shots.
+Always load `[ref:api-status]` for current API and platform claims. Do not rely on old release-status memory.
 
-Return: recommended surface, required assets, prompt mode, operational steps, verification checks, safety/IP checks, and fallback plan.
+## Workflow Split
 
-Legacy details moved to `references/migrated/seedance-pipeline-original.md`.
+1. Web workflow: Dreamina/Jimeng surface, references, prompt, output review.
+2. API workflow: BytePlus/ModelArk docs, model ID, auth, file handling, task creation, task retrieval.
+3. Post workflow: stitching, audio cleanup, captions, color, upscale, delivery.
+4. Community workflow: ComfyUI or unofficial nodes must be labeled community/unverified unless sourced.
+
+## Output Contract
+
+Return the workflow path, source status, required inputs, validation steps, and risks.

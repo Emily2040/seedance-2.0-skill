@@ -1,203 +1,62 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title>Seedance 2.0 skill map</title>
+  <desc>A grouped map of the root Seedance skill, core pipeline skills, governance skills, vocabulary skills, and reference files.</desc>
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0f"/>
-      <stop offset="100%" style="stop-color:#0d1117"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <filter id="glow-sm">
-      <feGaussianBlur stdDeviation="1.5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <!-- Node styles -->
-    <radialGradient id="core-glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#00f0ff;stop-opacity:0.3"/>
-      <stop offset="100%" style="stop-color:#00f0ff;stop-opacity:0"/>
-    </radialGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#020617"/><stop offset="1" stop-color="#111827"/></linearGradient>
+    <style>
+      .h{font:800 34px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#f8fafc}
+      .group{font:700 18px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#e2e8f0}
+      .txt{font:600 15px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#cbd5e1}
+      .muted{font:500 13px ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;fill:#94a3b8}
+      .root{fill:#0f172a;stroke:#38bdf8;stroke-width:3;rx:24}
+      .card{fill:#111827;stroke:#334155;stroke-width:1.2;rx:14}
+      .core{stroke:#22d3ee}.gov{stroke:#fb7185}.voc{stroke:#a78bfa}.ref{stroke:#22c55e}
+      .line{stroke:#475569;stroke-width:2}
+    </style>
   </defs>
-
-  <!-- Background -->
-  <rect width="900" height="500" fill="url(#bg)"/>
-
-  <!-- Constellation connection lines -->
-  <g stroke="#1a2332" stroke-width="0.8" opacity="0.6">
-    <!-- Core to Production ring -->
-    <line x1="450" y1="250" x2="280" y2="140"/>
-    <line x1="450" y1="250" x2="450" y2="100"/>
-    <line x1="450" y1="250" x2="620" y2="140"/>
-    <line x1="450" y1="250" x2="180" y2="250"/>
-    <line x1="450" y1="250" x2="720" y2="250"/>
-    <line x1="450" y1="250" x2="280" y2="360"/>
-    <line x1="450" y1="250" x2="450" y2="400"/>
-    <line x1="450" y1="250" x2="620" y2="360"/>
-    <!-- Inter-node connections -->
-    <line x1="280" y1="140" x2="450" y2="100"/>
-    <line x1="450" y1="100" x2="620" y2="140"/>
-    <line x1="620" y1="140" x2="720" y2="250"/>
-    <line x1="720" y1="250" x2="620" y2="360"/>
-    <line x1="620" y1="360" x2="450" y2="400"/>
-    <line x1="450" y1="400" x2="280" y2="360"/>
-    <line x1="280" y1="360" x2="180" y2="250"/>
-    <line x1="180" y1="250" x2="280" y2="140"/>
-    <!-- Outer vocab ring connections -->
-    <line x1="100" y1="80" x2="280" y2="140"/>
-    <line x1="800" y1="80" x2="620" y2="140"/>
-    <line x1="100" y1="420" x2="280" y2="360"/>
-    <line x1="800" y1="420" x2="620" y2="360"/>
-    <line x1="450" y1="460" x2="450" y2="400"/>
+  <rect width="1200" height="760" fill="url(#bg)"/>
+  <text x="60" y="64" class="h">Seedance 2.0 Skill Constellation</text>
+  <rect x="440" y="92" width="320" height="86" class="root"/>
+  <text x="515" y="130" class="group">seedance-20</text>
+  <text x="486" y="156" class="muted">router · status rule · prompt principles</text>
+  <line x1="600" y1="178" x2="600" y2="226" class="line"/>
+  <text x="60" y="242" class="group">Core Pipeline</text>
+  <text x="60" y="500" class="group">Governance + Quality</text>
+  <text x="760" y="242" class="group">Vocabulary + Examples</text>
+  <text x="760" y="500" class="group">References</text>
+  <g>
+    <rect x="60" y="270" width="190" height="44" class="card core"/><text x="78" y="297" class="txt">interview</text>
+    <rect x="270" y="270" width="190" height="44" class="card core"/><text x="288" y="297" class="txt">prompt</text>
+    <rect x="480" y="270" width="190" height="44" class="card core"/><text x="498" y="297" class="txt">prompt-short</text>
+    <rect x="60" y="330" width="190" height="44" class="card core"/><text x="78" y="357" class="txt">camera</text>
+    <rect x="270" y="330" width="190" height="44" class="card core"/><text x="288" y="357" class="txt">motion</text>
+    <rect x="480" y="330" width="190" height="44" class="card core"/><text x="498" y="357" class="txt">lighting</text>
+    <rect x="60" y="390" width="190" height="44" class="card core"/><text x="78" y="417" class="txt">characters</text>
+    <rect x="270" y="390" width="190" height="44" class="card core"/><text x="288" y="417" class="txt">style</text>
+    <rect x="480" y="390" width="190" height="44" class="card core"/><text x="498" y="417" class="txt">audio / pipeline</text>
   </g>
-
-  <!-- Animated pulse on core -->
-  <circle cx="450" cy="250" r="30" fill="url(#core-glow)">
-    <animate attributeName="r" values="30;45;30" dur="3s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="1;0.3;1" dur="3s" repeatCount="indefinite"/>
-  </circle>
-
-  <!-- ===== CORE NODE ===== -->
-  <a href="SKILL.md">
-    <circle cx="450" cy="250" r="18" fill="#0d1117" stroke="#00f0ff" stroke-width="2" filter="url(#glow)"/>
-    <text x="450" y="254" text-anchor="middle" font-family="'SF Mono',monospace" font-size="8" fill="#00f0ff" font-weight="700">CORE</text>
-  </a>
-
-  <!-- ===== PRODUCTION SKILLS (inner ring) ===== -->
-  <!-- Interview (top-left) -->
-  <a href="skills/seedance-interview/SKILL.md">
-    <circle cx="280" cy="140" r="12" fill="#0d1117" stroke="#b000ff" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="280" y="143" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#b000ff">📋</text>
-    <text x="280" y="125" text-anchor="middle" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">interview</text>
-  </a>
-
-  <!-- Prompt (top-center) -->
-  <a href="skills/seedance-prompt/SKILL.md">
-    <circle cx="450" cy="100" r="12" fill="#0d1117" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="450" y="103" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#00f0ff">✍️</text>
-    <text x="450" y="85" text-anchor="middle" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">prompt</text>
-  </a>
-
-  <!-- Camera (top-right) -->
-  <a href="skills/seedance-camera/SKILL.md">
-    <circle cx="620" cy="140" r="12" fill="#0d1117" stroke="#ff006e" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="620" y="143" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#ff006e">🎥</text>
-    <text x="620" y="125" text-anchor="middle" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">camera</text>
-  </a>
-
-  <!-- Motion (right) -->
-  <a href="skills/seedance-motion/SKILL.md">
-    <circle cx="720" cy="250" r="12" fill="#0d1117" stroke="#ffbe0b" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="720" y="253" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#ffbe0b">🏃</text>
-    <text x="755" y="253" text-anchor="start" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">motion</text>
-  </a>
-
-  <!-- Characters (left) -->
-  <a href="skills/seedance-characters/SKILL.md">
-    <circle cx="180" cy="250" r="12" fill="#0d1117" stroke="#b000ff" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="180" y="253" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#b000ff">🎭</text>
-    <text x="145" y="253" text-anchor="end" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">characters</text>
-  </a>
-
-  <!-- Lighting (bottom-left) -->
-  <a href="skills/seedance-lighting/SKILL.md">
-    <circle cx="280" cy="360" r="12" fill="#0d1117" stroke="#ffbe0b" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="280" y="363" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#ffbe0b">💡</text>
-    <text x="280" y="380" text-anchor="middle" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">lighting</text>
-  </a>
-
-  <!-- Audio (bottom-center) -->
-  <a href="skills/seedance-audio/SKILL.md">
-    <circle cx="450" cy="400" r="12" fill="#0d1117" stroke="#00f0ff" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="450" y="403" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#00f0ff">🔊</text>
-    <text x="450" y="420" text-anchor="middle" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">audio</text>
-  </a>
-
-  <!-- VFX (bottom-right) -->
-  <a href="skills/seedance-vfx/SKILL.md">
-    <circle cx="620" cy="360" r="12" fill="#0d1117" stroke="#ff006e" stroke-width="1.5" filter="url(#glow-sm)"/>
-    <text x="620" y="363" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#ff006e">✨</text>
-    <text x="620" y="380" text-anchor="middle" font-family="'SF Mono',monospace" font-size="7" fill="#8b949e">vfx</text>
-  </a>
-
-  <!-- ===== SUPPORT SKILLS (mid positions) ===== -->
-  <!-- Style -->
-  <a href="skills/seedance-style/SKILL.md">
-    <circle cx="365" cy="155" r="9" fill="#0d1117" stroke="#b000ff" stroke-width="1" opacity="0.8"/>
-    <text x="365" y="158" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#b000ff">🎨</text>
-    <text x="365" y="142" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#6e7681">style</text>
-  </a>
-
-  <!-- Pipeline -->
-  <a href="skills/seedance-pipeline/SKILL.md">
-    <circle cx="540" cy="155" r="9" fill="#0d1117" stroke="#00f0ff" stroke-width="1" opacity="0.8"/>
-    <text x="540" y="158" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#00f0ff">🔗</text>
-    <text x="540" y="142" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#6e7681">pipeline</text>
-  </a>
-
-  <!-- Recipes -->
-  <a href="skills/seedance-recipes/SKILL.md">
-    <circle cx="540" cy="345" r="9" fill="#0d1117" stroke="#ffbe0b" stroke-width="1" opacity="0.8"/>
-    <text x="540" y="348" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#ffbe0b">📖</text>
-    <text x="540" y="362" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#6e7681">recipes</text>
-  </a>
-
-  <!-- Troubleshoot -->
-  <a href="skills/seedance-troubleshoot/SKILL.md">
-    <circle cx="365" cy="345" r="9" fill="#0d1117" stroke="#ff006e" stroke-width="1" opacity="0.8"/>
-    <text x="365" y="348" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#ff006e">🔧</text>
-    <text x="365" y="362" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#6e7681">troubleshoot</text>
-  </a>
-
-  <!-- Copyright -->
-  <a href="skills/seedance-copyright/SKILL.md">
-    <circle cx="670" cy="195" r="9" fill="#0d1117" stroke="#b000ff" stroke-width="1" opacity="0.8"/>
-    <text x="670" y="198" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#b000ff">⚖️</text>
-    <text x="695" y="198" text-anchor="start" font-family="'SF Mono',monospace" font-size="6" fill="#6e7681">copyright</text>
-  </a>
-
-  <!-- Antislop -->
-  <a href="skills/seedance-antislop/SKILL.md">
-    <circle cx="230" cy="195" r="9" fill="#0d1117" stroke="#ff006e" stroke-width="1" opacity="0.8"/>
-    <text x="230" y="198" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#ff006e">🚫</text>
-    <text x="205" y="198" text-anchor="end" font-family="'SF Mono',monospace" font-size="6" fill="#6e7681">antislop</text>
-  </a>
-
-  <!-- ===== VOCAB NODES (outer ring) ===== -->
-  <!-- Chinese -->
-  <a href="skills/seedance-vocab-zh/SKILL.md">
-    <circle cx="100" cy="80" r="8" fill="#0d1117" stroke="#00f0ff" stroke-width="1" opacity="0.7"/>
-    <text x="100" y="83" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#00f0ff">🇨🇳</text>
-    <text x="100" y="68" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#484f58">vocab-zh</text>
-  </a>
-
-  <!-- Japanese -->
-  <a href="skills/seedance-vocab-ja/SKILL.md">
-    <circle cx="800" cy="80" r="8" fill="#0d1117" stroke="#ff006e" stroke-width="1" opacity="0.7"/>
-    <text x="800" y="83" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#ff006e">🇯🇵</text>
-    <text x="800" y="68" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#484f58">vocab-ja</text>
-  </a>
-
-  <!-- Korean -->
-  <a href="skills/seedance-vocab-ko/SKILL.md">
-    <circle cx="100" cy="420" r="8" fill="#0d1117" stroke="#b000ff" stroke-width="1" opacity="0.7"/>
-    <text x="100" y="423" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#b000ff">🇰🇷</text>
-    <text x="100" y="438" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#484f58">vocab-ko</text>
-  </a>
-
-  <!-- Spanish -->
-  <a href="skills/seedance-vocab-es/SKILL.md">
-    <circle cx="800" cy="420" r="8" fill="#0d1117" stroke="#ffbe0b" stroke-width="1" opacity="0.7"/>
-    <text x="800" y="423" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#ffbe0b">🇪🇸</text>
-    <text x="800" y="438" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#484f58">vocab-es</text>
-  </a>
-
-  <!-- Russian -->
-  <a href="skills/seedance-vocab-ru/SKILL.md">
-    <circle cx="450" cy="460" r="8" fill="#0d1117" stroke="#00f0ff" stroke-width="1" opacity="0.7"/>
-    <text x="450" y="463" text-anchor="middle" font-family="'SF Mono',monospace" font-size="5" fill="#00f0ff">🇷🇺</text>
-    <text x="450" y="478" text-anchor="middle" font-family="'SF Mono',monospace" font-size="6" fill="#484f58">vocab-ru</text>
-  </a>
-
-  <!-- Title -->
-  <text x="450" y="30" text-anchor="middle" font-family="'SF Mono',monospace" font-size="12" fill="#484f58" letter-spacing="6">SKILL CONSTELLATION</text>
+  <g>
+    <rect x="60" y="530" width="190" height="44" class="card gov"/><text x="78" y="557" class="txt">copyright</text>
+    <rect x="270" y="530" width="190" height="44" class="card gov"/><text x="288" y="557" class="txt">filter</text>
+    <rect x="480" y="530" width="190" height="44" class="card gov"/><text x="498" y="557" class="txt">anti-slop</text>
+    <rect x="60" y="590" width="190" height="44" class="card gov"/><text x="78" y="617" class="txt">troubleshoot</text>
+    <rect x="270" y="590" width="190" height="44" class="card gov"/><text x="288" y="617" class="txt">recipes</text>
+    <rect x="480" y="590" width="190" height="44" class="card gov"/><text x="498" y="617" class="txt">vfx</text>
+  </g>
+  <g>
+    <rect x="760" y="270" width="160" height="44" class="card voc"/><text x="778" y="297" class="txt">vocab-zh</text>
+    <rect x="940" y="270" width="160" height="44" class="card voc"/><text x="958" y="297" class="txt">vocab-ja</text>
+    <rect x="760" y="330" width="160" height="44" class="card voc"/><text x="778" y="357" class="txt">vocab-ko</text>
+    <rect x="940" y="330" width="160" height="44" class="card voc"/><text x="958" y="357" class="txt">vocab-es</text>
+    <rect x="760" y="390" width="160" height="44" class="card voc"/><text x="778" y="417" class="txt">vocab-ru</text>
+    <rect x="940" y="390" width="160" height="44" class="card voc"/><text x="958" y="417" class="txt">examples-zh</text>
+  </g>
+  <g>
+    <rect x="760" y="530" width="160" height="44" class="card ref"/><text x="778" y="557" class="txt">api-status</text>
+    <rect x="940" y="530" width="160" height="44" class="card ref"/><text x="958" y="557" class="txt">quick-ref</text>
+    <rect x="760" y="590" width="160" height="44" class="card ref"/><text x="778" y="617" class="txt">i2v-guide</text>
+    <rect x="940" y="590" width="160" height="44" class="card ref"/><text x="958" y="617" class="txt">source-registry</text>
+    <rect x="760" y="650" width="160" height="44" class="card ref"/><text x="778" y="677" class="txt">audio-guide</text>
+    <rect x="940" y="650" width="160" height="44" class="card ref"/><text x="958" y="677" class="txt">design-system</text>
+  </g>
 </svg>

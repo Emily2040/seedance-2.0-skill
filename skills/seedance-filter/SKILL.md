@@ -5,37 +5,35 @@ license: MIT
 user-invocable: true
 user-invokable: true
 tags:
-  - seedance-20
   - content-filter
-  - safety
-  - rewrites
+  - safe-rewrite
+  - seedance-20
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
+
 # seedance-filter
 
-Use this skill when a prompt is blocked, degraded, or likely to trigger content filters. The job is not to bypass safety systems; it is to preserve legitimate creative intent with safer surface wording.
+Use this when a prompt is blocked, degraded, or likely to trip moderation.
 
-Diagnostic questions:
-1. Is the risk identity-based: celebrity, public figure, named character, brand, logo, voice, or face?
-2. Is the risk violence, sexuality, minors, self-harm, or weapon wording?
-3. Is the risk copyright or platform policy?
-4. Is the risk false-positive wording that can be replaced with neutral production language?
+## Repair Method
 
-Rewrite rules:
-- Replace protected identity with original archetype.
-- Replace graphic harm with non-graphic action consequence.
-- Replace weapon emphasis with choreography, blocking, or prop-neutral movement.
-- Replace clone/copy/replicate with reference-informed pacing only when references are owned/licensed.
+1. Identify the creative intent.
+2. Identify risky surface wording.
+3. Replace risky terms with professional, non-graphic, production-context language.
+4. Preserve composition, action, mood, and camera logic.
+5. Do not help bypass safety systems.
 
-Return: likely trigger category, safe rewrite, retained intent, removed terms, and retry variant.
+Load `[ref:filter-vocab]` for safer substitutions.
 
-Legacy details moved to `references/migrated/seedance-filter-original.md`.
+## Output Contract
+
+Return likely trigger class, safer wording, final prompt, and what changed.

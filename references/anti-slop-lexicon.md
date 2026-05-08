@@ -1,15 +1,18 @@
 # Anti-Slop Lexicon
 
+Replace empty evaluation language with observable production language.
+
 | Weak phrase | Replace with |
 |---|---|
-| cinematic masterpiece | one precise shot type, camera move, and light source |
-| ultra realistic | skin/material/lighting details that create realism |
-| dramatic atmosphere | fog density, light angle, contrast, sound bed |
-| stunning visuals | specific color palette, texture, lens behavior |
-| epic action | named physical action and consequence |
-| magical | particle/material behavior and transformation rule |
-| high quality | resolution/craft requirement only if platform-supported |
-| dynamic scene | exact motion vector and timing |
-| beautiful lighting | key/fill/rim/source direction or time of day |
+| cinematic | shot scale, camera move, lighting, grade |
+| epic | physical scale, stakes, crowd size, lens distance |
+| beautiful | color, texture, composition, material, light behavior |
+| stunning | visible contrast, reveal, movement, or detail |
+| dynamic | specific movement, speed, and endpoint |
+| dramatic | blocking, shadow, silence, or camera pressure |
+| ultra-realistic | material behavior, skin texture, lens artifacts, natural motion |
+| cool transition | match cut, whip pan, dissolve, hard cut, object wipe |
+| magical | particle behavior, glow source, motion path, interaction |
+| professional | product lighting setup, clean background, controlled camera |
 
-Keep reference tags, nouns, verbs, camera, light, audio, and safety constraints. Delete vague adjectives first.
+Rule: if a camera, microphone, light meter, or stopwatch cannot detect it, rewrite it.

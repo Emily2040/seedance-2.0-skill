@@ -1,0 +1,22 @@
+name: validate-seedance-skill
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Validate skill metadata and required files
+        run: python scripts/validate_skills.py --strict
+      - name: Audit stale and risky active wording
+        run: python scripts/content_audit.py --strict
+      - name: Validate eval schema
+        run: python scripts/eval_schema_check.py --strict
+      - name: Audit frontend README and SVG assets
+        run: python scripts/design_audit.py --strict

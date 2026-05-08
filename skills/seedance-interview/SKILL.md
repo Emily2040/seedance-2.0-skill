@@ -5,61 +5,35 @@ license: MIT
 user-invocable: true
 user-invokable: true
 tags:
-  - seedance-20
-  - video-generation
+  - creative-direction
   - interview
+  - brief
+  - seedance-20
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
-# seedance-interview · The Director\'s Journey (v5.0)
 
-This skill transforms a simple idea into a professional Seedance 2.0 production brief. It uses a structured, multi-stage interview process that prioritizes genre and reference media to create effective, concise prompts.
+# seedance-interview
 
-## The Workflow
+Use this as the full director interview when the user has a rough idea rather than a ready scene.
 
-### Stage 1: The Vision & Genre
+## Process
 
-- **Action:** Get a 1-sentence concept from the user.
-- **AI:** Immediately ask the user to choose a genre from the [ref:genre-guides].
-- **AI:** Ask if they have any reference media (images, videos, audio).
+1. Build a safe draft premise immediately from the user input.
+2. Ask only the missing questions that materially affect the prompt: subject, action, reference assets, camera feel, emotional direction, duration, and risk constraints.
+3. Identify the genre path: product, lifestyle, drama, music video, landscape, commercial, animation, UGC, or experimental.
+4. End with a concise creative brief and route to `[skill:seedance-prompt]` or `[skill:seedance-prompt-short]`.
 
-### Stage 2: The "Quick Mode" Exit
+## Output Contract
 
-- **If the user has strong reference media and a clear genre (e.g., Product Ad, Music Video), do not force them through the full interview.**
-- **AI Output:** `"It looks like you have a clear vision and strong references. I recommend we move directly to prompt construction using the [skill:seedance-prompt] Director\'s Formula. Would you like to do that?"`
-- This provides an off-ramp for users who do not need a deep narrative exploration.
+Return: concept summary, reference asset request, core scene, mood, camera intent, sound intent, safety notes, and next prompt path.
 
-### Stage 3: The Narrative Core (for Drama/Narrative genres)
-
-- **If the user chose a narrative genre and has a vague idea, proceed with the "Attack & Deconstruct" method.**
-- **AI:** Build a generic version of the scene.
-- **AI Output:** `"I have built a Safe version of your scene: *[A woman in a red dress walks down a rainy street at night.]* Now, let\'s attack it. What is the one thing in this scene that *shouldn\'t* be there? What is the *friction*?"`
-
-### Stage 4: Visual & Technical Layering
-
-- Based on the user\'s answers, layer in the visual and technical details using the Director\'s Formula from [skill:seedance-prompt].
-- Prioritize elements based on the chosen genre.
-
-### Stage 5: The Final Production Brief
-
-- **Action:** Output a structured brief that includes the final prompt (30-100 words), a list of the `@reference` assets, and director\'s notes.
-
----
-
-## Why This Works
-
-- **Efficiency:** The "Quick Mode" exit respects the user\'s time and prevents unnecessary over-specification.
-- **Genre-Aware:** The process is tailored to the user\'s chosen content category from the start.
-- **Reference-First:** It prioritizes the most powerful tool in the Seedance 2.0 arsenal: the `@reference` system.
-
----
-
-*Maintained by [Emily (@iamemily2050)](https://github.com/Emily2040)*
+Do not ask a long questionnaire when the user already supplied enough information to write the prompt.

@@ -1,96 +1,49 @@
 ---
 name: seedance-prompt
-description: "This skill should be used when the user asks to write, improve, compress, translate, or debug a Seedance 2.0 video prompt; mentions text-to-video, image-to-video, reference-to-video, camera direction, prompt quality, or a direct generation prompt; or provides reference assets and wants a production-ready Seedance prompt."
+description: "This skill should be used when the user asks to write, improve, translate, compress, or debug a Seedance 2.0 video prompt; mentions T2V, I2V, V2V, R2V, camera direction, prompt quality, or provides reference assets for a production-ready prompt."
 license: MIT
 user-invocable: true
 user-invokable: true
 tags:
-  - seedance-20
+  - prompt-engineering
   - video-generation
-  - prompt
+  - seedance-20
 metadata:
-  version: "5.1.0"
-  updated: "2026-04-27"
+  version: "5.2.0"
+  updated: "2026-05-08"
   parent: "seedance-20"
-  author: "Emily (@iamemily2050)"
+  author: "Iamemily2050 (@iamemily2050)"
   repository: "https://github.com/Emily2040/seedance-2.0"
   openclaw:
-    emoji: ""
+    emoji: "🎬"
     homepage: "https://github.com/Emily2040/seedance-2.0"
 ---
 
-# seedance-prompt · The Director\'s Formula (v5.0)
 
-This skill translates a user\'s creative vision into a production-ready prompt for Seedance 2.0. It uses a genre-aware, intent-driven workflow based on community-proven best practices.
+# seedance-prompt
 
-## The Governing Philosophy
+Build production-ready Seedance prompts from clear concepts or supplied reference assets.
 
-> Seedance 2.0 is an AI director. Tell it **WHAT** you want and **HOW** it should **FEEL**, not every micro-detail of **HOW** to execute it. Trust the model.
+## Director Formula
 
-## The Director\'s Formula
+`Subject + Action + Scene + Camera + Lighting/Style + Audio + Constraints`
 
-All prompts should follow this structure. The default target length is **30–100 words**.
+Use the formula flexibly. Do not force every slot if a reference asset already shows the information.
 
-`[Subject] + [Action] + [Scene] + [Camera] + [Style] + [Constraints]`
+## Mode Gate
 
----
+- T2V: describe subject, action, scene, camera, style, and constraints.
+- I2V: describe only motion, camera, timing, transformation, and audio. Do not repeat visible static details.
+- V2V/R2V: map each reference to a role before writing the prompt.
 
-## The Workflow
+## Final Output Contract
 
-### 1. Genre Router
+Return:
 
-First, ask the user to identify their content category. This determines the prompt\'s skeleton, length, and emphasis.
+1. Mode: T2V, I2V, V2V, or R2V.
+2. Reference role map, if any.
+3. Final prompt.
+4. Optional Chinese compressed version when useful.
+5. Safety or copyright note when relevant.
 
-| Genre | Lead With | Length Target | Key Sections |
-| :--- | :--- | :--- | :--- |
-| **Product/E-commerce** | Subject | 30-50 words | Subject, Camera, Style |
-| **Lifestyle/Social** | Action | 40-60 words | Action, Scene, Style |
-| **Drama/Narrative** | Scene | 60-100 words | Scene, Action, Camera |
-| **Music Video** | Style | 50-80 words | Style, Action, Camera |
-| **Landscape/Travel** | Scene | 30-60 words | Scene, Camera, Style |
-| **Commercial/Brand** | Style | 40-70 words | Style, Scene, Action |
-| **Anime/Artistic** | Style | 50-90 words | Style, Action, Scene |
-| **UGC (User-Generated)** | Action | 20-40 words | Action, Scene, Camera (handheld) |
-
-*For detailed templates per genre, see [ref:genre-guides].*
-
-### 2. I2V vs. T2V Gate
-
-Ask if the user has reference images. This fundamentally changes the prompt.
-
-- **If YES (I2V Mode):** The prompt should **only describe motion and camera movement.** Do not re-describe static visual elements that the model can already see in the image.
-- **If NO (T2V Mode):** The prompt must describe all visual elements from scratch.
-
-*For detailed I2V guidance, see [ref:i2v-guide].*
-
-### 3. Build with the Formula
-
-Construct the prompt using the `Subject + Action + Scene + Camera + Style + Constraints` formula, tailored to the chosen genre.
-
-### 4. Physics & Degree Adverbs
-
-Instead of vague mood words, use concrete physics and intensity descriptors.
-
-- **Physics Language:** `tires smoke`, `gravel sprays`, `sweat flies off in slow motion`, `dust erupts violently`, `fat renders slowly, oil bubbles form`.
-- **Degree Adverbs:** `slowly`, `dramatically`, `violently`, `gently`, `frantically`. The model cannot infer intensity from images; it must be stated.
-
-### 5. Anti-Slop Check (Expanded)
-
-Scan the prompt for slop words that conceal a lack of specific information. This now includes action and camera slop.
-
-- **Visual Slop:** `beautiful`, `stunning`, `epic`, `amazing`
-- **Action/Camera Slop:** `dynamic`, `energetic`, `cinematic camera movement`, `cool transition`
-
-Replace all slop with measurable, observable details.
-
----
-
-## Why This Works
-
-- **Aligns with Model Behavior:** This workflow is based on extensive analysis of community-proven prompts that have the highest success rates.
-- **Reduces Failure Rate:** By avoiding overspecification and using the model\'s preferred prompt structure, this method drastically reduces errors like jitter, morphing, and camera chaos.
-- **Genre-Specific:** Provides tailored guidance for the most common real-world use cases, not just one expert-level workflow.
-
----
-
-*Maintained by [Emily (@iamemily2050)](https://github.com/Emily2040)*
+Before finalizing, run an anti-slop pass and remove vague quality boosters.
